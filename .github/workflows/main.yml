@@ -13,7 +13,7 @@ jobs:
         run: Echo AUla Ok
 
       - name: Sincronia com o Glitch
-        uses: kanadgupta/glitch-sync@3.0.1
+        uses: kanadgupta/glitch-sync@v3.0.1
         with:
           auth-token: '${{ secrets.authToken }}'
           project-id: '${{ secrets.projectId }}'
