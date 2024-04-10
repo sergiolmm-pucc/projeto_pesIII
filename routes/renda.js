@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('<h1>Calculo de renda...</h1>');
+  res.send('<h1>Calculo de renda fixa com juros descontados...</h1>');
 });
 
 module.exports = router;
