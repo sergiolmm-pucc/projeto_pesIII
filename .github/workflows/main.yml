@@ -3,7 +3,7 @@ name: Aula de Integração continua
 on: [push]
 
 jobs:
-  Executando_teste:
+  Executando:
       permissions: write-all
       runs-on: ubuntu-latest
       
