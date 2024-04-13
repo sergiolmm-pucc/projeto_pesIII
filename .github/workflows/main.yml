@@ -1,25 +1,16 @@
 name: Aula de Integração continua
 
-on: push
+on: [push]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    
-    steps:
-      - uses: actions/checkout@v3
-
-      - name:  Mostra texto
-        run: echo AUla Ok
-
   Executando_teste:
       permissions: write-all
       runs-on: ubuntu-latest
       
       strategy:
-       matrix:
-        node-version: [18.x]
-        
+        matrix:
+          node-version: [18.x]
+
       steps:
          - uses: actions/checkout@v3
          - name: Use node.js ${{ matrix.node-version }}
@@ -36,14 +27,11 @@ jobs:
             name: JEST tests
             path: reports/jest-*.xml
             reporter: jest-junit
-
-  deploy1:
-    steps:
-      - name: Sincronia com o Glitch
-        uses: kanadgupta/glitch-sync@v3.0.1
-        with:
-          auth-token: '${{ secrets.authToken }}'
-          project-id: '${{ secrets.projectId }}'
+        - name: Sincronia com o Glitch
+          uses: kanadgupta/glitch-sync@v3.0.1
+          with:
+            auth-token: '${{ secrets.authToken }}'
+            project-id: '${{ secrets.projectId }}'
         
       
     
