@@ -25,7 +25,7 @@ jobs:
                 if: success() || failure()  # roda de qualquer maneira
                 with:
                   name: JEST tests
-                  path: reports/j*.xml
+                  path: j*.xml
                   reporter: jest-junit
               - name: Sincronia com o Glitch
                 uses: kanadgupta/glitch-sync@v3.0.1
