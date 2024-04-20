@@ -7,7 +7,10 @@ function calcular(valor_a, valor_b){
 
 }
 
+function cCube(valor) {
+    return valor * valor * valor;
+}
 
 
-module.exports = calcular;
+module.exports = {calcular, cCube}
 
