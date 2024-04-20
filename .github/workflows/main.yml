@@ -3,35 +3,35 @@ name: Aula de Integração continua
 on: [push]
 
 jobs:
-  Executando_teste:
-      permissions: write-all
-      runs-on: ubuntu-latest
+    Deploy:
+        permissions: write-all
+        runs-on: ubuntu-latest
       
-      strategy:
-        matrix:
-          node-version: [18.x]
+        strategy:
+            matrix:
+               node-version: [18.x]
 
-      steps:
-         - uses: actions/checkout@v3
-         - name: Use node.js ${{ matrix.node-version }}
-           uses: actions/setup-node@v3
-           with:
-             node-version: ${{ matrix.node-version }}
-         - run: npm ci
-         - run: npm run build --if-present
-         - run: npm test
-         - name: Teste Report
-           uses: dorny/test-reporter@v1
-           if: success() || failure()  # roda de qualquer maneira
-           with:
-            name: JEST tests
-            path: reports/jest-*.xml
-            reporter: jest-junit
-        - name: Sincronia com o Glitch
-          uses: kanadgupta/glitch-sync@v3.0.1
-          with:
-            auth-token: '${{ secrets.authToken }}'
-            project-id: '${{ secrets.projectId }}'
+        steps:
+              - uses: actions/checkout@v3
+              - name: Use node.js ${{ matrix.node-version }}
+                uses: actions/setup-node@v3
+                with:
+                  node-version: ${{ matrix.node-version }}
+              - run: npm ci
+              - run: npm run build --if-present
+              - run: npm test
+              - name: Teste Report
+                uses: dorny/test-reporter@v1
+                if: success() || failure()  # roda de qualquer maneira
+                with:
+                  name: JEST tests
+                  path: j*.xml
+                  reporter: jest-junit
+              - name: Sincronia com o Glitch
+                uses: kanadgupta/glitch-sync@v3.0.1
+                with:
+                  auth-token: '${{ secrets.authToken }}'
+                  project-id: '${{ secrets.projectId }}'
         
       
     
