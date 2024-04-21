@@ -2,8 +2,8 @@ name: Projeto da aula de PESIII - CI / CD
 on: [push]
 jobs:
   test:
-    runs-on: ubuntu-latest
 		permissions: write-all
+		runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [18.x]
