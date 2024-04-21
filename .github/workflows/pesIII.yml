@@ -26,4 +26,12 @@ jobs:
           path: j*.xml
           reporter: jest-junit
 
+      - name: Sincronia com o Glitch
+        uses: kanadgupta/glitch-sync@v3.0.1
+        if: success()
+        with:
+            auth-token: '${{ secrets.authToken }}'
+            project-id: '${{ secrets.projectId }}'
+
+
 
