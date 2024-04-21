@@ -1,26 +1,29 @@
 name: Projeto da aula de PESIII - CI / CD
-on: push
+on: [push]
 jobs:
-	test:
-		strategy:
-			matrix:
-				node-version: [18.x]
-		run-on: ubuntu-latest
-		steps:
-			- name: Get Code from repository
-				uses: actions/checkout@v3
-			- name: Install NodeJS
-				uses: actions/setup-node@v3	
-				with:
-					node-version: ${{ matrix.node-version }}
-			- name: Instala Dependencias
-			  run: npm ci
-			- name: Roda os testes
-				run: npm test
-			- name: Gera o Relatório dos testes
-				uses: dorny/test-reporter@v1
-				if: success() || failure()  # roda de qualquer maneira
-				with:
-					name: JEST tests
-					path: j*.xml
-					reporter: jest-junit				
+  test:
+    permissions: write-all
+    run-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - name: Get Code from repository
+        uses: actions/checkout@v3
+      - name: Install NodeJS
+        uses: actions/setup-node@v3	
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Instala Dependencias
+        run: npm ci
+      - name: Roda os testes
+        run: npm test
+      - name: Gera o Relatório dos testes
+        uses: dorny/test-reporter@v1
+        if: success() || failure()  # roda de qualquer maneira
+        with:
+          name: JEST tests
+          path: j*.xml
+          reporter: jest-junit
+
+
