@@ -16,6 +16,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Instala Dependencias
         run: npm ci
+      - name: Run Lint
+        run: npm run lint
       - name: Roda os testes
         run: npm test
       - name: Gera o Relatório dos testes
