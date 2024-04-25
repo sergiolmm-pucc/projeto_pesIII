@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var rendaRouter = require('./routes/renda');
 var baseRouter  = require('./routes/base');
 var apiRouter   = require('./routes/api');
+var optionsRouter = require('./routes/opcoes');
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.use('/users', usersRouter);
 app.use('/renda', rendaRouter);
 app.use('/base',baseRouter);
 app.use('/api',apiRouter);
+app.use('/opcoes',optionsRouter)
 
 
 
