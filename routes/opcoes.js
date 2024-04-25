@@ -1,12 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
- 
-});
+
 
 // Function to calculate the Black-Scholes option price
+
+//function calculateOptionPrice(stockPrice, strikePrice, timeToExpiration, volatility, riskFreeRate, optionType) {
 function calculateOptionPrice(stockPrice, strikePrice, timeToExpiration, volatility, riskFreeRate, optionType) {
   // Constants
   var d1 = (Math.log(stockPrice / strikePrice) + (riskFreeRate + 0.5 * volatility * volatility) * timeToExpiration) / (volatility * Math.sqrt(timeToExpiration));
@@ -59,5 +58,6 @@ router.get('/', function(req, res, next) {
   res.json({ optionPrice: optionPrice });
 });
 
+module.exports.calculateOptionPrice = calculateOptionPrice;
 
-module.exports = router;
+// module.exports = router;
