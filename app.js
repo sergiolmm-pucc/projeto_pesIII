@@ -12,7 +12,7 @@ var apiRouter   = require('./routes/api');
 var optionsRouter = require('./routes/opcoes');
 
 var app = express();
-
+let port = 3000
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -48,4 +48,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+// app.listen(port, ()=>{
+//   console.log(`App listening in port ${port}`)
+// })
 module.exports = app;

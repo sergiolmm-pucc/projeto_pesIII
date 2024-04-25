@@ -58,6 +58,6 @@ router.get('/', function(req, res, next) {
   res.json({ optionPrice: optionPrice });
 });
 
-module.exports.calculateOptionPrice = calculateOptionPrice;
+// module.exports.calculateOptionPrice = calculateOptionPrice;
 
-// module.exports = router;
+module.exports = router;
