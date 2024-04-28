@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
+const path = require('path');
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('<h1>Calculo de darf, será????...</h1>');
+router.get('/', function (req, res, next) {
+  res.sendFile(path.join(__dirname + "/../views/darf.html"))
 });
 
 module.exports = router;
