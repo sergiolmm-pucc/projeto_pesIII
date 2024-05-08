@@ -1,9 +1,9 @@
 var express = require('express');
+var path = require('path'); 
 var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('<h1>Calculo de renda fixa com juros descontados...</h1>');
+router.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, '../public/html/renda.html'));
 });
 
 module.exports = router;
