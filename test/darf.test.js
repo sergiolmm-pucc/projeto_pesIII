@@ -1,5 +1,5 @@
 const Darf = require("../public/javascripts/Darf.js")
-
+const { describe, test, expect } = require('@jest/globals')
 
 describe("Teste Darf", () => {
     test("should throw an error when parameter types are wrong", () => {
@@ -25,6 +25,6 @@ describe("Teste Darf", () => {
 
     test("is this selling profitable?", () => {
         const darf = new Darf(5, 50, 60)
-        expect(darf.getProfitOrLost()).toBeGreaterThan(0)
+        expect(darf.getProfitOrLostPerShare()).toBeGreaterThan(0)
     })
 })

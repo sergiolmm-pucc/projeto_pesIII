@@ -19,16 +19,16 @@ class Darf {
         return this.#priceBuy
     }
 
-    getProfitOrLost() {
+    getProfitOrLostPerShare() {
         return this.#priceSell - this.#priceBuy
     }
 
     getDarfPrice() {
-        if (this.getProfitOrLost <= 0) {
+        if (this.getProfitOrLostPerShare() <= 0) {
             return 0
         }
 
-        return ((this.#qtd * this.getProfitOrLost()) * .20) - .075
+        return ((this.#qtd * this.getProfitOrLostPerShare()) * .20) - .075
     }
 }
 
