@@ -2,6 +2,7 @@
 
 const calculateOptionPrice = require('../routes/opcoes')//.calculateOptionPrice;
 
+// npm run pra rodar a api 
 
 describe('Options Calculator', () => {
     it('should calculate the option price correctly for a call option', () => {
