@@ -3,12 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opções</title>
+    <title>Black-Scholes Option Price Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container=formulario">
-        <form class="formulario"></form>
+    <div class="container">
+        <h1>Black-Scholes Option Price Calculator</h1>
+        <div class="form-group">
+            <label for="stockPrice">Stock Price</label>
+            <input type="number" id="stockPrice" step="0.01">
+        </div>
+        <div class="form-group">
+            <label for="strikePrice">Strike Price</label>
+            <input type="number" id="strikePrice" step="0.01">
+        </div>
+        <div class="form-group">
+            <label for="timeToExpiration">Time to Expiration (years)</label>
+            <input type="number" id="timeToExpiration" step="0.01">
+        </div>
+        <div class="form-group">
+            <label for="volatility">Volatility (percentage)</label>
+            <input type="number" id="volatility" step="0.01">
+        </div>
+        <div class="form-group">
+            <label for="riskFreeRate">Risk-Free Rate (percentage)</label>
+            <input type="number" id="riskFreeRate" step="0.01">
+        </div>
+        <div class="form-group">
+            <label for="optionType">Option Type</label>
+            <select id="optionType">
+                <option value="call">Call</option>
+                <option value="put">Put</option>
+            </select>
+        </div>
+        <button onclick="calculateOptionPrice()">Calculate Option Price</button>
+        <div class="result" id="result"></div>
     </div>
-    
+
+    <script>
+        function calculateOptionPrice() {
+            const stockPrice = parseFloat(document.getElementById('stockPrice').value);
+            const strikePrice = parseFloat(document.getElementById('strikePrice').value);
+            const timeToExpiration = parseFloat(document.getElementById('timeToExpiration').value);
+            const volatility = parseFloat(document.getElementById('volatility').value) / 100;
+            const riskFreeRate = parseFloat(document.getElementById('riskFreeRate').value) / 100;
+            const optionType = document.getElementById('optionType').value;
+
+            fetch(`http://localhost:3000/?stockPrice=${stockPrice}&strikePrice=${strikePrice}&timeToExpiration=${timeToExpiration}&volatility=${volatility}&riskFreeRate=${riskFreeRate}&optionType=${optionType}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('result').innerHTML = `Option Price: $${data.optionPrice.toFixed(2)}`;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
 </body>
 </html>
