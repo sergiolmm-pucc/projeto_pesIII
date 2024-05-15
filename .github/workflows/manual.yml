@@ -1,4 +1,4 @@
-name: Projeto da aula de PESIII - CI / CD Deploy manual sem teste
+name: Deploy manual sem teste
 on: [workflow_dispatch]
 jobs:
   deploy-Manual:
