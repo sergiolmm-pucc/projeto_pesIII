@@ -41,4 +41,39 @@ jobs:
             project-id: '${{ secrets.projectId }}'
 
 
+  Funcional:
+    needs: deploy
+    permissions: write-all
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v3
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v3	
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Instala Dependencias
+        run: npm ci        
+      
+      - name: Run teste Funcional no glitch
+        run: npm run F-test
+      
+      - name: lista work directory
+        run: ls -la /home/runner/work/projeto_pesIII/projeto_pesIII
+      - name: lista work directory
+        run: ls -la /home/runner/work/projeto_pesIII/projeto_pesIII/fotos      
+      - name: lista work directory
+        run: ls -la /home/runner/work/projeto_pesIII/projeto_pesIII/fotos/exemplo      
+
+      - name: fotos da tela
+        uses: actions/upload-artifact@v4
+        with:
+          name: Fotos dos testes
+          # Path to the release files          
+          # Gravar as fotos na raiz do projeto no docker
+          path: /home/runner/work/projeto_pesIII/projeto_pesIII/fotos/exemplo/*.png  
 
