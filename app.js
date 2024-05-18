@@ -10,6 +10,8 @@ var rendaRouter = require('./routes/renda');
 var baseRouter = require('./routes/base');
 var darfRouter = require('./routes/darf');
 
+var exampleRouter = require('./routes/example');
+
 var app = express();
 
 // view engine setup
@@ -27,7 +29,7 @@ app.use('/users', usersRouter);
 app.use('/renda', rendaRouter);
 app.use('/base', baseRouter);
 app.use('/darf', darfRouter);
-
+app.use('/example', exampleRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
