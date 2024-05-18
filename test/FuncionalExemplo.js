@@ -29,7 +29,7 @@ const { Options } = require('selenium-webdriver/chrome');
   try {
     
     // Navegação para a página HTML
-    await driver.get(https://stealth-faithful-geese.glitch.me/Example');
+    await driver.get('https://stealth-faithful-geese.glitch.me/Example');
       //'https://aeolian-momentous-cellar.glitch.me/Example');
 
     // Wait for 5 secs to let the dynamic content to load
