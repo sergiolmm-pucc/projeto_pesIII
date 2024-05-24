@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var rendaRouter = require('./routes/renda');
 var baseRouter = require('./routes/base');
+var fgtsRouter =  require('./routes/fgts');
 var darfRouter = require('./routes/darf');
 
 var exampleRouter = require('./routes/example');
@@ -29,6 +30,7 @@ app.use('/users', usersRouter);
 app.use('/renda', rendaRouter);
 app.use('/base', baseRouter);
 app.use('/darf', darfRouter);
+app.use('/fgts',fgtsRouter);
 app.use('/example', exampleRouter);
 
 // catch 404 and forward to error handler
