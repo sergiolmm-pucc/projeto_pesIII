@@ -47,7 +47,7 @@ const { Options } = require('selenium-webdriver/chrome');
           if (err == null){
               console.log('Gravou Foto');
           }else{
-              console.log('Erro ->' + err);
+              console.error('Erro ->' + err);
           }
   
         });
@@ -59,11 +59,11 @@ const { Options } = require('selenium-webdriver/chrome');
 
    // Captura de tela final
     await driver.takeScreenshot().then((image, err) => {
-      require('fs').writeFile('./fotos/exemplo/valorDigitado-darf.png', image, 'base64', function (err) {
+      require('fs').writeFile('./fotos/darf/valorDigitado-darf.png', image, 'base64', function (err) {
         if (err == null){
             console.log('Gravou Foto');
         }else{
-            console.log('Erro ->' + err);
+            console.error('Erro ->' + err);
         }
       });
     });
@@ -89,11 +89,11 @@ const { Options } = require('selenium-webdriver/chrome');
 
     // Captura de tela final
     await driver.takeScreenshot().then((image, err) => {
-      require('fs').writeFile('./fotos/exemplo/fim-darf.png', image, 'base64', function (err) {
+      require('fs').writeFile('./fotos/darf/fim-darf.png', image, 'base64', function (err) {
         if (err == null){
             console.log('Gravou Foto');
         }else{
-            console.log('Erro ->' + err);
+            console.error('Erro ->' + err);
         }
 
       });
