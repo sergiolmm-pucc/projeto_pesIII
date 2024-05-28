@@ -7,7 +7,8 @@
     "lint": "eslint 'routes/**/*.js?(x)'",
     "test": "jest --ci --reportes=default --reporters=jest-junit",
     "test2": "jest --verbose ./test2",
-    "F-test": "node ./test/FuncionalExemplo"
+    "F-test": "node ./test/FuncionalExemplo",
+    "F-darf-test": "node ./test/FuncionalDarf"
   },
   "jest-junit": {
     "suiteName": "jest tests",
