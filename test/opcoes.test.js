@@ -1,6 +1,6 @@
 const request = require('supertest');
 const express = require('express');
-const router = require('./path_to_your_router');  // Update the path as needed
+const router = require('./path_to_your_router');  
 
 const app = express();
 app.use('/', router);
@@ -18,7 +18,7 @@ describe('calculateOptionPrice', () => {
         const optionType = 'call';
 
         const price = calculateOptionPrice(stockPrice, strikePrice, timeToExpiration, volatility, riskFreeRate, optionType);
-        expect(price).toBeCloseTo(10.4506, 4);  // Expected value with 4 decimal precision
+        expect(price).toBeCloseTo(10.4506, 4);  
     });
 
     test('should calculate put option price correctly', () => {
@@ -30,8 +30,7 @@ describe('calculateOptionPrice', () => {
         const optionType = 'put';
 
         const price = calculateOptionPrice(stockPrice, strikePrice, timeToExpiration, volatility, riskFreeRate, optionType);
-        expect(price).toBeCloseTo(5.5735, 4);  // Expected value with 4 decimal precision
-    });
+        expect(price).toBeCloseTo(5.5735, 4); 
 
     test('should return NaN for invalid option type', () => {
         const stockPrice = 100;
@@ -60,7 +59,7 @@ describe('GET /', () => {
 
         expect(response.statusCode).toBe(200);
         expect(response.body).toHaveProperty('optionPrice');
-        expect(response.body.optionPrice).toBeCloseTo(10.4506, 4);  // Expected value with 4 decimal precision
+        expect(response.body.optionPrice).toBeCloseTo(10.4506, 4);  
     });
 
     test('should handle invalid option type', async () => {

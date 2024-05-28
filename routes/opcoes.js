@@ -44,7 +44,7 @@ function cumulativeDistribution(x) {
   
 
 /* GET options price. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   
   // Retrieve parameters from query string
   var stockPrice = parseFloat(req.query.stockPrice);
