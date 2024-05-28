@@ -41,18 +41,7 @@ function cumulativeDistribution(x) {
   return w;
 }
 
-
-// router.get('/', function(req, res, next) {
-//   fs.readFile('./public/html/base.html', function (err, html) {
-//       if (err) {
-//           throw err; 
-//       }      
-//       else { 
-//          res.writeHeader(200, {"Content-Type": "text/html"});  
-//           res.write(html);  
-//           res.end();  
-//       }
-//   });    
+  
 
 /* GET options price. */
 router.get('/', function(req, res, next) {

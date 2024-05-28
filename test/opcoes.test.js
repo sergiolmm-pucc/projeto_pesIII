@@ -1,33 +1,80 @@
-// __tests__/optionsCalculator.test.js
+const request = require('supertest');
+const express = require('express');
+const router = require('./path_to_your_router');  // Update the path as needed
 
-const calculateOptionPrice = require('../routes/opcoes')//.calculateOptionPrice;
+const app = express();
+app.use('/', router);
 
-// npm run pra rodar a api 
+// Test suite for calculateOptionPrice function
+describe('calculateOptionPrice', () => {
+    const calculateOptionPrice = router.calculateOptionPrice;
 
-describe('Options Calculator', () => {
-    it('should calculate the option price correctly for a call option', () => {
-
-        // const stockPrice = 100;
-        // const strikePrice = 90;
-        // const timeToExpiration = 1;
-        // const volatility = 0.2;
-        // const riskFreeRate = 0.05;
-        // const optionType = 'call';
-
-        const stockPrice = 0;
-        const strikePrice = 0;
-        const timeToExpiration = 0;
-        const volatility = 0;
-        const riskFreeRate = 0;
+    test('should calculate call option price correctly', () => {
+        const stockPrice = 100;
+        const strikePrice = 100;
+        const timeToExpiration = 1;
+        const volatility = 0.2;
+        const riskFreeRate = 0.05;
         const optionType = 'call';
 
-
-        const expectedOptionPrice = 14.656438634490996;
-        
-        var optionPrice = calculateOptionPrice(stockPrice, strikePrice, timeToExpiration, volatility, riskFreeRate, optionType);
-
-
-        expect(optionPrice).toBeCloseTo(expectedOptionPrice, 4);
+        const price = calculateOptionPrice(stockPrice, strikePrice, timeToExpiration, volatility, riskFreeRate, optionType);
+        expect(price).toBeCloseTo(10.4506, 4);  // Expected value with 4 decimal precision
     });
 
+    test('should calculate put option price correctly', () => {
+        const stockPrice = 100;
+        const strikePrice = 100;
+        const timeToExpiration = 1;
+        const volatility = 0.2;
+        const riskFreeRate = 0.05;
+        const optionType = 'put';
+
+        const price = calculateOptionPrice(stockPrice, strikePrice, timeToExpiration, volatility, riskFreeRate, optionType);
+        expect(price).toBeCloseTo(5.5735, 4);  // Expected value with 4 decimal precision
+    });
+
+    test('should return NaN for invalid option type', () => {
+        const stockPrice = 100;
+        const strikePrice = 100;
+        const timeToExpiration = 1;
+        const volatility = 0.2;
+        const riskFreeRate = 0.05;
+        const optionType = 'invalid';
+
+        const price = calculateOptionPrice(stockPrice, strikePrice, timeToExpiration, volatility, riskFreeRate, optionType);
+        expect(price).toBeNaN();
+    });
+});
+
+// Test suite for the Express route
+describe('GET /', () => {
+    test('should return option price as JSON', async () => {
+        const response = await request(app).get('/').query({
+            stockPrice: 100,
+            strikePrice: 100,
+            timeToExpiration: 1,
+            volatility: 0.2,
+            riskFreeRate: 0.05,
+            optionType: 'call'
+        });
+
+        expect(response.statusCode).toBe(200);
+        expect(response.body).toHaveProperty('optionPrice');
+        expect(response.body.optionPrice).toBeCloseTo(10.4506, 4);  // Expected value with 4 decimal precision
+    });
+
+    test('should handle invalid option type', async () => {
+        const response = await request(app).get('/').query({
+            stockPrice: 100,
+            strikePrice: 100,
+            timeToExpiration: 1,
+            volatility: 0.2,
+            riskFreeRate: 0.05,
+            optionType: 'invalid'
+        });
+
+        expect(response.statusCode).toBe(200);
+        expect(response.body).toHaveProperty('optionPrice');
+        expect(response.body.optionPrice).toBeNaN();
+    });
 });
