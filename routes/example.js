@@ -1,10 +1,9 @@
-var fs = require('fs');
-
 
 var express = require('express');
 var router = express.Router();
+var fs = require('fs');
 
-/* GET home page. */
+/* GET users listing. */
 router.get('/', function(req, res) {
     fs.readFile('./public/html/base.html', function (err, html) {
         if (err) {
@@ -15,9 +14,8 @@ router.get('/', function(req, res) {
             res.write(html);  
             res.end();  
         }
-    });    
-      
-
-});
+    });  
+  });
+  
 
 module.exports = router;
