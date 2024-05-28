@@ -31,6 +31,7 @@ describe('calculateOptionPrice', () => {
 
         const price = calculateOptionPrice(stockPrice, strikePrice, timeToExpiration, volatility, riskFreeRate, optionType);
         expect(price).toBeCloseTo(5.5735, 4); 
+    });
 
     test('should return NaN for invalid option type', () => {
         const stockPrice = 100;
@@ -59,7 +60,7 @@ describe('GET /', () => {
 
         expect(response.statusCode).toBe(200);
         expect(response.body).toHaveProperty('optionPrice');
-        expect(response.body.optionPrice).toBeCloseTo(10.4506, 4);  
+        expect(response.body.optionPrice).toBeCloseTo(10.4506, 4);  // Expected value with 4 decimal precision
     });
 
     test('should handle invalid option type', async () => {
