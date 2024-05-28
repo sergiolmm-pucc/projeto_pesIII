@@ -43,7 +43,7 @@ const { Options } = require('selenium-webdriver/chrome');
     await driver.wait(until.elementIsVisible(By.name('inpQtd')), 10000);
 
     await driver.takeScreenshot().then((image, err) => {
-        require('fs').writeFile('./fotos/exemplo/inicio-darf.png', image, 'base64', function (err) {
+        require('fs').writeFile('./fotos/darf/inicio-darf.png', image, 'base64', function (err) {
           if (err == null){
               console.log('Gravou Foto');
           }else{
