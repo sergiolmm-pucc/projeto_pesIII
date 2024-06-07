@@ -7,6 +7,7 @@
     "lint": "eslint 'routes/**/*.js?(x)'",
     "test": "jest --ci --reportes=default --reporters=jest-junit",
     "test2": "jest --verbose ./test2",
+    "test3": "jest --verbose",
     "F-test": "node ./test/FuncionalExemplo"
   },
   "jest-junit": {
