@@ -18,6 +18,10 @@ jobs:
         run: npm ci
       - name: Run Lint
         run: npm run lint
+      
+      - name: Roda os testes  sergio
+        run: npm run test3
+        
       - name: Roda os testes
         run: npm test
       - name: Gera o Relatório dos testes
