@@ -3,7 +3,7 @@ const { calculateEuropeanOptionPrice, calculateAmericanOptionPrice } = require('
 describe('Option Pricing Calculations', () => {
   test('calculateEuropeanOptionPrice for call option', () => {
     const result = calculateEuropeanOptionPrice(100, 100, 1, 0.2, 0.05, 'call');
-    expect(result).toBeCloseTo(10.45, 2); y
+    expect(result).toBeCloseTo(10.45, 2); 
   });
 
   test('calculateEuropeanOptionPrice for put option', () => {
