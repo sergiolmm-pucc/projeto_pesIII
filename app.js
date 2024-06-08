@@ -10,6 +10,7 @@ var rendaRouter = require('./routes/renda');
 var baseRouter = require('./routes/base');
 var fgtsRouter =  require('./routes/fgts');
 var darfRouter = require('./routes/darf');
+var custoRouter = require('./routes/custo');
 
 var exampleRouter = require('./routes/example');
 
