@@ -68,9 +68,10 @@ const { Options } = require('selenium-webdriver/chrome');
       });
     });
     
+    driver.wait(until.elementIsVisible(driver.findElement(By.id('btnAdd'))), 5000);
     
     // Verificação dos botões 
-    const calculaButton = await driver.findElement(By.name('btnAdd'));
+    const calculaButton = await driver.findElement(By.id('btnAdd'));
     // Verifica se os botões estão visíveis
     if ( (await calculaButton.isDisplayed()) ) {
       console.log('Passou: Botão de calcular está visível');
