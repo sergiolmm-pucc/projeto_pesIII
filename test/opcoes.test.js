@@ -1,5 +1,5 @@
 const express = require('express');
-const router = require('./path_to_your_router');  
+const router = require('./opcoes');  
 
 const app = express();
 app.use('/', router);
