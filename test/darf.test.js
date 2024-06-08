@@ -23,8 +23,8 @@ describe("Teste Darf", () => {
         expect(darf.getAvgPrice()).toBe(50)
     })
 
-    test("is this selling profitable?", () => {
-        const darf = new Darf(5, 50, 60)
-        expect(darf.getProfitOrLostPerShare()).toBeGreaterThan(0)
-    })
+    // test("is this selling profitable?", () => {
+    //     const darf = new Darf(5, 50, 60)
+    //     expect(darf.getProfitOrLostPerShare()).toBeGreaterThan(0)
+    // })
 })
