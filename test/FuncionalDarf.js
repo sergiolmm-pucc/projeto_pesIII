@@ -6,6 +6,14 @@ const { Builder, Browser, By,Key,  until } = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
 const { Options } = require('selenium-webdriver/chrome');
 
+function esperarTextoAtualizarPorRequisicao(textoInicial) {
+  return async function(driver) {
+      const element = await driver.findElement(By.id('profitOrLoss'));
+      const text = await element.getText();
+      return text !== textoInicial;
+  };
+}
+
 (async () => {
 
    // Configuração do ambiente do WebDriver e opções do navegador
@@ -36,11 +44,6 @@ const { Options } = require('selenium-webdriver/chrome');
     await driver.sleep(15000);
     
     // Esperar o site carregar completamente
-    
-    await driver.wait(until.elementLocated(By.name('inpBuy')), 10000);
-    await driver.wait(until.elementIsVisible(By.name('inpSell')), 10000);
-    await driver.wait(until.elementLocated(By.name('inpQtd')), 10000);
-    await driver.wait(until.elementIsVisible(By.name('inpQtd')), 10000);
 
     await driver.takeScreenshot().then((image, err) => {
         require('fs').writeFile('./fotos/darf/inicio-darf.png', image, 'base64', function (err) {
@@ -78,10 +81,20 @@ const { Options } = require('selenium-webdriver/chrome');
    // await valorBase.sendKeys('4');
 
     // Clique no botão 
-    await calculaButton.click();
+    await driver.findElement(By.name('btnAdd')).click();
 
-    driver.wait(5000);
+    await driver.wait(esperarTextoAtualizarPorRequisicao('R$ 00,00'), 10000);
 
+
+    let profitOrLoss = await driver.findElement(By.id('profitOrLoss'));
+    let value = await profitOrLoss.getText();
+    
+    console.log(value);
+
+
+    // await calculaButton.click();
+
+    // await driver.wait(15000);
 
     // Captura de tela final
     await driver.takeScreenshot().then((image, err) => {
