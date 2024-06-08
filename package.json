@@ -5,10 +5,11 @@
   "scripts": {
     "start": "node ./bin/www",
     "lint": "eslint 'routes/**/*.js?(x)'",
+    "test3": "jest --verbose",
     "test": "jest --ci --reportes=default --reporters=jest-junit",
     "test2": "jest --verbose ./test2",
     "F-test": "node ./test/FuncionalExemplo",
-    "test3": "jest --verbose",
+  
     "F-darf-test": "node ./test/FuncionalDarf"
 
   },
