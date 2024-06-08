@@ -1,8 +1,4 @@
 class Darf {
-    #qtd;
-    #priceBuy;
-    #priceSell;
-
     constructor(quantity, priceBought, priceSelled) {
         if (typeof quantity != "number" ||
             typeof priceBought != "number" ||
@@ -10,17 +6,17 @@ class Darf {
             throw new Error("Os tipos de parâmetros não batem com o esperado. \nTodos os parâmetros devem ser do tipo 'number'.")
         }
 
-        this.#qtd = quantity;
-        this.#priceBuy = priceBought;
-        this.#priceSell = priceSelled;
+        this.qtd = quantity;
+        this.priceBuy = priceBought;
+        this.priceSell = priceSelled;
     }
 
     getAvgPrice() {
-        return this.#priceBuy
+        return this.priceBuy
     }
 
     getProfitOrLostPerShare() {
-        return this.#priceSell - this.#priceBuy
+        return this.priceSell - this.priceBuy
     }
 
     getDarfPrice() {
@@ -28,7 +24,7 @@ class Darf {
             return 0
         }
 
-        return ((this.#qtd * this.getProfitOrLostPerShare()) * .20) - .075
+        return ((this.qtd * this.getProfitOrLostPerShare()) * .20) - .075
     }
 }
 
