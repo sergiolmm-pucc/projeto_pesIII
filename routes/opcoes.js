@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, '../views/optionPrice.html'));
 });
 
-router.post('/calculate-option-price', function(req, res, next) {
+router.post('/calculate-option-price', function(req, res) {
   const { stockPrice, strikePrice, timeToMaturity, volatility, riskFreeRate, optionType, exerciseType } = req.body;
 
   let optionPrice;
