@@ -32,7 +32,7 @@ const makeDirs = (dir) => {
 
   try {
    
-    await driver.get('https://calculo-fgts.glitch.me');
+    await driver.get('https://stealth-faithful-geese.glitch.me/fgts');
 
     
     await driver.wait(until.elementLocated(By.id('salario')), 20000);
