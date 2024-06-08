@@ -14,7 +14,7 @@ const darfEl = document.getElementById('darf')
 btnAdd.addEventListener('click', async () => {
     if (inpBuy.value != '' && inpSell.value != '' && inpQtd.value != '') {
         let darf = await axios.post(
-          'http://localhost:3000/darf/calc',
+          'https://stealth-faithful-geese.glitch.me/darf/calc',
           {
             quantity: parseFloat(inpQtd.value),
             buyPrice: parseFloat(inpBuy.value),
