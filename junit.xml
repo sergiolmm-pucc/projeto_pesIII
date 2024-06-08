@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="14" failures="0" errors="0" time="1.181">
-  <testsuite name="test\darf.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-08T20:53:01" time="0.361" tests="4">
-    <testcase classname="Teste Darf-should throw an error when parameter types are wrong" name="Teste Darf-should throw an error when parameter types are wrong" time="0.012">
+<testsuites name="jest tests" tests="14" failures="0" errors="0" time="1.278">
+  <testsuite name="test\darf.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-08T20:59:05" time="0.396" tests="4">
+    <testcase classname="Teste Darf-should throw an error when parameter types are wrong" name="Teste Darf-should throw an error when parameter types are wrong" time="0.017">
     </testcase>
     <testcase classname="Teste Darf-is the darf fee right?" name="Teste Darf-is the darf fee right?" time="0.001">
     </testcase>
-    <testcase classname="Teste Darf-is the darf fee wrong?" name="Teste Darf-is the darf fee wrong?" time="0.001">
+    <testcase classname="Teste Darf-is the darf fee wrong?" name="Teste Darf-is the darf fee wrong?" time="0">
     </testcase>
-    <testcase classname="Teste Darf-is the avg price right?" name="Teste Darf-is the avg price right?" time="0">
+    <testcase classname="Teste Darf-is the avg price right?" name="Teste Darf-is the avg price right?" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="test\Calc2.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-08T20:53:01" time="0.144" tests="2">
-    <testcase classname="Teste basico 2-Valores " name="Teste basico 2-Valores " time="0.01">
+  <testsuite name="test\Calc2.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-08T20:59:05" time="0.148" tests="2">
+    <testcase classname="Teste basico 2-Valores " name="Teste basico 2-Valores " time="0.011">
     </testcase>
     <testcase classname="Teste basico 2-CalcularCubo com string " name="Teste basico 2-CalcularCubo com string " time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="test\CalcFgts.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-08T20:53:01" time="0.144" tests="4">
-    <testcase classname="Teste FGTS-deve lançar um erro quando os tipos dos parâmetros estão errados" name="Teste FGTS-deve lançar um erro quando os tipos dos parâmetros estão errados" time="0.01">
+  <testsuite name="test\CalcFgts.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-08T20:59:05" time="0.148" tests="4">
+    <testcase classname="Teste FGTS-deve lançar um erro quando os tipos dos parâmetros estão errados" name="Teste FGTS-deve lançar um erro quando os tipos dos parâmetros estão errados" time="0.011">
     </testcase>
-    <testcase classname="Teste FGTS-deve lançar um erro quando os parâmetros são negativos" name="Teste FGTS-deve lançar um erro quando os parâmetros são negativos" time="0.001">
+    <testcase classname="Teste FGTS-deve lançar um erro quando os parâmetros são negativos" name="Teste FGTS-deve lançar um erro quando os parâmetros são negativos" time="0.002">
     </testcase>
-    <testcase classname="Teste FGTS-o cálculo do FGTS está correto?" name="Teste FGTS-o cálculo do FGTS está correto?" time="0">
+    <testcase classname="Teste FGTS-o cálculo do FGTS está correto?" name="Teste FGTS-o cálculo do FGTS está correto?" time="0.001">
     </testcase>
-    <testcase classname="Teste FGTS-o cálculo do FGTS está incorreto?" name="Teste FGTS-o cálculo do FGTS está incorreto?" time="0.001">
-    </testcase>
-  </testsuite>
-  <testsuite name="test\Exemplo2.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-08T20:53:01" time="0.127" tests="1">
-    <testcase classname="Teste exemplo 3-Funcao calcularArea" name="Teste exemplo 3-Funcao calcularArea" time="0.002">
+    <testcase classname="Teste FGTS-o cálculo do FGTS está incorreto?" name="Teste FGTS-o cálculo do FGTS está incorreto?" time="0">
     </testcase>
   </testsuite>
-  <testsuite name="test\CalcularTest.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-08T20:53:02" time="0.13" tests="2">
+  <testsuite name="test\CalcularTest.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-08T20:59:05" time="0.136" tests="2">
     <testcase classname="Teste basico 1-Valores corretos" name="Teste basico 1-Valores corretos" time="0.004">
     </testcase>
     <testcase classname="Teste basico 1-CalcularCubo de 3 " name="Teste basico 1-CalcularCubo de 3 " time="0">
     </testcase>
   </testsuite>
-  <testsuite name="test\Exemplo.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-08T20:53:02" time="0.119" tests="1">
+  <testsuite name="test\Exemplo2.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-08T20:59:06" time="0.143" tests="1">
+    <testcase classname="Teste exemplo 3-Funcao calcularArea" name="Teste exemplo 3-Funcao calcularArea" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="test\Exemplo.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-08T20:59:06" time="0.132" tests="1">
     <testcase classname="Teste exemplo 1-Funcao calcularArea" name="Teste exemplo 1-Funcao calcularArea" time="0.002">
     </testcase>
   </testsuite>
