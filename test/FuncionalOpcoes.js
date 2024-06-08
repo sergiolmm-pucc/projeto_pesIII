@@ -30,7 +30,7 @@ const fs = require('fs');
     await driver.sleep(2000);
 
     await driver.takeScreenshot().then((image, err) => {
-      fs.writeFile('./fotos/opcoesFuncional/option_test_result.png', image, 'base64', (err) => {
+      fs.writeFile('./fotos/exemplo/option_test_result.png', image, 'base64', (err) => {
         if (err) console.error('Error saving screenshot:', err);
         else console.log('Screenshot saved.');
       });
