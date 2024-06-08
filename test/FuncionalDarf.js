@@ -10,6 +10,7 @@ function esperarTextoAtualizarPorRequisicao(textoInicial) {
   return async function(driver) {
       const element = await driver.findElement(By.id('profitOrLoss'));
       const text = await element.getText();
+      console.log(text)
       return text !== textoInicial;
   };
 }
@@ -84,13 +85,6 @@ function esperarTextoAtualizarPorRequisicao(textoInicial) {
     await driver.findElement(By.name('btnAdd')).click();
 
     await driver.wait(esperarTextoAtualizarPorRequisicao('R$ 00,00'), 10000);
-
-
-    let profitOrLoss = await driver.findElement(By.id('profitOrLoss'));
-    let value = await profitOrLoss.getText();
-    
-    console.log(value);
-
 
     // await calculaButton.click();
 
