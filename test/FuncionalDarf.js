@@ -68,16 +68,8 @@ const { Options } = require('selenium-webdriver/chrome');
       });
     });
     
-    driver.wait(until.elementIsVisible(driver.findElement(By.id('btnAdd'))), 5000);
-    
     // Verificação dos botões 
     const calculaButton = await driver.findElement(By.id('btnAdd'));
-    // Verifica se os botões estão visíveis
-    if ( (await calculaButton.isDisplayed()) ) {
-      console.log('Passou: Botão de calcular está visível');
-    } else {
-      console.log('Falhou: Botão de calcular não está visível');
-    }
 
    // valorAltura = await driver.findElement(By.id('valorAltura'));
    // await valorAltura.sendKeys('10');
@@ -87,6 +79,9 @@ const { Options } = require('selenium-webdriver/chrome');
 
     // Clique no botão 
     await calculaButton.click();
+
+    driver.wait(5000);
+
 
     // Captura de tela final
     await driver.takeScreenshot().then((image, err) => {
