@@ -1,18 +1,14 @@
 var express = require('express');
+var { calculaFgts } = require('../public/javascripts/fgts_script.js'); // Use require instead of import
 var router = express.Router();
+var path = require('path');
 
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
-function calculaFgts(salarioBruto, qtdMes) {
-    if (typeof salarioBruto !== 'number' || typeof qtdMes !== 'number') {
-        throw new Error("Os valores devem ser numeros!");
-    }
-    if (salarioBruto < 0 || qtdMes < 0) {
-        throw new Error("Os valores não podem ser negativos!");
-    }
-    return salarioBruto * 0.08 * qtdMes;
-}
+router.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname, '/../views/fgts.html'));
+});
 
 router.post('/calcular-fgts', function(req, res) {
     let salarioBruto = parseFloat(req.body.salario);

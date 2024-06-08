@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="14" failures="0" errors="0" time="1.541">
+  <testsuite name="test\CalcularTest.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-08T03:43:11" time="1.029" tests="2">
+    <testcase classname="Teste basico 1-Valores corretos" name="Teste basico 1-Valores corretos" time="0.013">
+    </testcase>
+    <testcase classname="Teste basico 1-CalcularCubo de 3 " name="Teste basico 1-CalcularCubo de 3 " time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="test\Exemplo2.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-08T03:43:11" time="1.043" tests="1">
+    <testcase classname="Teste exemplo 3-Funcao calcularArea" name="Teste exemplo 3-Funcao calcularArea" time="0.014">
+    </testcase>
+  </testsuite>
+  <testsuite name="test\Calc2.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-08T03:43:11" time="1.056" tests="2">
+    <testcase classname="Teste basico 2-Valores " name="Teste basico 2-Valores " time="0.025">
+    </testcase>
+    <testcase classname="Teste basico 2-CalcularCubo com string " name="Teste basico 2-CalcularCubo com string " time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="test\Exemplo.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-08T03:43:11" time="1.041" tests="1">
+    <testcase classname="Teste exemplo 1-Funcao calcularArea" name="Teste exemplo 1-Funcao calcularArea" time="0.015">
+    </testcase>
+  </testsuite>
+  <testsuite name="test\darf.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-08T03:43:11" time="1.068" tests="4">
+    <testcase classname="Teste Darf-should throw an error when parameter types are wrong" name="Teste Darf-should throw an error when parameter types are wrong" time="0.029">
+    </testcase>
+    <testcase classname="Teste Darf-is the darf fee right?" name="Teste Darf-is the darf fee right?" time="0.001">
+    </testcase>
+    <testcase classname="Teste Darf-is the darf fee wrong?" name="Teste Darf-is the darf fee wrong?" time="0">
+    </testcase>
+    <testcase classname="Teste Darf-is the avg price right?" name="Teste Darf-is the avg price right?" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="test\CalcFgts.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-08T03:43:11" time="1.079" tests="4">
+    <testcase classname="Teste FGTS-deve lançar um erro quando os tipos dos parâmetros estão errados" name="Teste FGTS-deve lançar um erro quando os tipos dos parâmetros estão errados" time="0.018">
+    </testcase>
+    <testcase classname="Teste FGTS-deve lançar um erro quando os parâmetros são negativos" name="Teste FGTS-deve lançar um erro quando os parâmetros são negativos" time="0.002">
+    </testcase>
+    <testcase classname="Teste FGTS-o cálculo do FGTS está correto?" name="Teste FGTS-o cálculo do FGTS está correto?" time="0">
+    </testcase>
+    <testcase classname="Teste FGTS-o cálculo do FGTS está incorreto?" name="Teste FGTS-o cálculo do FGTS está incorreto?" time="0.001">
+    </testcase>
+  </testsuite>
+</testsuites>
