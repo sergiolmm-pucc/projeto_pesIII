@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <title>Calculadora de Preço de Venda</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <!-- entrada dos dados -->
+    <body>
+        <h1>Calculadora de Preço de Venda</h1>
+        <label for="custoMateriaPrima">Custo da Matéria Prima:</label>
+        <input type="number" id="custoMateriaPrima" required>
+
+        <label for="custoManuseio">Custo de Manuseio:</label>
+        <input type="number" id="custoManuseio" required>
+
+        <label for="outrosCustos">Outros Custos (opcional):</label>
+        <input type="number" id="outrosCustos">
+
+        <label for="margemLucro">Margem de Lucro (%):</label>
+        <input type="number" id="margemLucro" required>
+
+        <button onclick="calcularPreco()">Calcular Preço de Venda</button>
+        <div id="resultado"></div>
+
+        <!-- chama calculo  e confere se tudo esta preenchido-->
+        <script>
+            function calcularPreco() {
+                const custoMateriaPrima = parseFloat(document.getElementById('custoMateriaPrima').value) || 0;
+                const custoManuseio = parseFloat(document.getElementById('custoManuseio').value) || 0;
+                const outrosCustos = parseFloat(document.getElementById('outrosCustos').value) || 0;
+                const margemLucro = parseFloat(document.getElementById('margemLucro').value);
+        
+                if (!custoMateriaPrima || !custoManuseio || !margemLucro) {
+                    alert('Por favor, preencha todos os campos necessários.');
+                    return;
+                }
+        
+                const custoTotal = custoMateriaPrima + custoManuseio + outrosCustos;
+                const precoVenda = custoTotal * (1 + margemLucro / 100);
+        
+                document.getElementById('resultado').innerText = `O preço de venda sugerido é: R$ ${precoVenda.toFixed(2)}`;
+            }
+        </script>
+    
+    </body>
+</html>

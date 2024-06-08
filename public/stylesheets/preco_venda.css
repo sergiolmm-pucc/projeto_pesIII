@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f4f4f9; /*cinza margem*/
+    color: #333;
+}
+label, input, button {
+    margin-top: 10px;
+    display: block;
+}
+input, button {
+    width: 200px;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+button {
+    background-color: #296ace; /*azul*/
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #008000; /*verde*/
+}
+#resultado {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #007BFF;
+}
