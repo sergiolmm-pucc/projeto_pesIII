@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Option Price Calculator</title>
+</head>
+<body>
+    <h1>Option Price Calculator</h1>
+    <form method="POST" action="/option/calculate-option-price">
+        <label for="stockPrice">Stock Price:</label>
+        <input type="text" id="stockPrice" name="stockPrice">
+        <br>
+        <label for="strikePrice">Strike Price:</label>
+        <input type="text" id="strikePrice" name="strikePrice">
+        <br>
+        <label for="timeToMaturity">Time to Maturity (years):</label>
+        <input type="text" id="timeToMaturity" name="timeToMaturity">
+        <br>
+        <label for="volatility">Volatility (%):</label>
+        <input type="text" id="volatility" name="volatility">
+        <br>
+        <label for="riskFreeRate">Risk-Free Rate (%):</label>
+        <input type="text" id="riskFreeRate" name="riskFreeRate">
+        <br>
+        <label for="optionType">Option Type:</label>
+        <select id="optionType" name="optionType">
+            <option value="call">Call</option>
+            <option value="put">Put</option>
+        </select>
+        <br>
+        <label for="exerciseType">Exercise Type:</label>
+        <select id="exerciseType" name="exerciseType">
+            <option value="european">European</option>
+            <option value="american">American</option>
+        </select>
+        <br>
+        <button type="submit">Calculate</button>
+    </form>
+</body>
+</html>

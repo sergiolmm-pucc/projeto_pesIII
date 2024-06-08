@@ -12,6 +12,7 @@ var fgtsRouter =  require('./routes/fgts');
 var darfRouter = require('./routes/darf');
 var custosRouter = require('./routes/custo');
 var cambio = require('./routes/cambio.js');
+var opcoes = require('./routes/opcoes.js');
 
 var exampleRouter = require('./routes/example');
 
@@ -36,6 +37,7 @@ app.use('/fgts',fgtsRouter);
 app.use('/example', exampleRouter);
 app.use('/custos', custosRouter);
 app.use('/cambio', cambio);
+app.use('/option', opcoes);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
