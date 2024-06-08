@@ -1,0 +1,49 @@
+<html>
+
+  <head>
+    <title>Aula PES III </title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/public/javascripts/finan.js" type="module"></script>
+    <script src="functions/main.js" type="module"></script>
+  </head>
+
+  <body>
+    <h1 style="text-align: center;">Financiamento de imoveis</h1>
+    <form class="content" style="display: flex; flex-direction: column; gap: 10px;" id="form">
+
+        <label for="">Tipo de Imóvel</label>
+        <select name="" id="typeImovel" required>
+          <option value="Casa">Casa</option>
+          <option value="Apartamento">Apartamento</option>
+          <option value="Terreno">Terreno</option>
+        </select>
+
+        <label for="">Valor do Imóvel</label>
+        <input type="number" id="valueImovel" required>
+        <p id="erro_valor" style="color: red; display: none; font-size: 12px; align-items: start; justify-content: start;"></p>
+
+        <label for="">Renda Mensal Bruta</label>
+        <input type="number" id="monthlyIncome" required>
+
+        <label for="">Valor disponivel para a entrada</label>
+        <input type="number" id="propertyValue" required>
+
+        <label for="">Prazo desejado (meses)</label>
+        <input type="number" id="term" required>
+        <p id="erro_prazo" style="color: red; display: none; font-size: 12px; align-items: start; justify-content: start;"></p>
+        
+        <label for="">FGTS</label>
+        <select name="" id="FGTS" required>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+        </select>
+
+        <button onclick="returnHtml()">Finalizar</button>
+      </form>
+      <section id="result">
+        <p id="result_final">
+
+        </p>
+      </section>
+  </body>
+</html>

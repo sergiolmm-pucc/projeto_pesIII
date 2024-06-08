@@ -10,7 +10,7 @@ var rendaRouter = require('./routes/renda');
 var baseRouter = require('./routes/base');
 var fgtsRouter =  require('./routes/fgts');
 var darfRouter = require('./routes/darf');
-
+var finanRouter = require('./routes/finan');
 var exampleRouter = require('./routes/example');
 
 var app = express();
@@ -32,6 +32,7 @@ app.use('/base', baseRouter);
 app.use('/darf', darfRouter);
 app.use('/fgts',fgtsRouter);
 app.use('/example', exampleRouter);
+app.use('/finan', finanRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
