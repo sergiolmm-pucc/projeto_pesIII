@@ -11,7 +11,7 @@ const fs = require('fs');
   const driver = await new Builder().forBrowser('chrome').setChromeOptions(chromeOptions).build();
 
   try {
-    //await driver.get('https://stealth-faithful-geese.glitch.me/option');
+    await driver.get('https://stealth-faithful-geese.glitch.me/option');
 
     //await driver.get('http://localhost:3000/option');
     
