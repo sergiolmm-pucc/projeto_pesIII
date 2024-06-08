@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cálculo de FGTS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: black; 
+      color: white; 
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: black; 
+      border: 5px solid fuchsia;
+      border-radius: 25px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-top: 50px;
+    }
+
+    .center-align {
+      text-align: center;
+    }
+
+    h1 {
+      color: fuchsia; 
+      text-align: center; 
+    }
+    
+    h2 {
+      color: white;
+      text-align: left;
+    }
+
+    form {
+      display: inline-block;
+      width: 100%;
+      color: white; 
+    }
+
+    input[type="number"], button {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 25px;
+      border: 1px solid white; 
+      box-sizing: border-box;
+      background-color: black; 
+      color: white; 
+    }
+
+    button {
+      height: 50px; 
+      background-image: linear-gradient(to right, #007bff, #ff00ff); 
+      border: 1px solid white; 
+      cursor: pointer;
+      border-radius: 30px; 
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-image: linear-gradient(to right, #0056b3, #ff007f);
+    }
+
+    #resultado {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Calcular FGTS</h1>
+    <form id="fgtsForm" class="center-align">
+      <label for="salario">Informe seu salário bruto:</label>
+      <input type="number" id="salario" name="salario" required>
+      <br>
+      <label for="mes">Informe a quantidade de meses trabalhados:</label>
+      <input type="number" id="mes" name="mes" required>
+      <br>
+      <button type="submit">Calcular FGTS</button>
+    </form>
+    <div id="resultado"></div>
+  </div>
+  <script src="/javascripts/fgts.view.js"></script> 
+</body>
+</html>
