@@ -10,7 +10,13 @@ var rendaRouter = require('./routes/renda');
 var baseRouter = require('./routes/base');
 var fgtsRouter =  require('./routes/fgts');
 var darfRouter = require('./routes/darf');
+<<<<<<< HEAD
 var finanRouter = require('./routes/finan');
+=======
+var custosRouter = require('./routes/custos');
+var cambio = require('./routes/cambio.js');
+
+>>>>>>> ebe6132d98a09894b783e4d57476fc76972c533b
 var exampleRouter = require('./routes/example');
 
 var app = express();
@@ -32,7 +38,12 @@ app.use('/base', baseRouter);
 app.use('/darf', darfRouter);
 app.use('/fgts',fgtsRouter);
 app.use('/example', exampleRouter);
+<<<<<<< HEAD
 app.use('/finan', finanRouter)
+=======
+app.use('/custos', custosRouter);
+app.use('/cambio', cambio);
+>>>>>>> ebe6132d98a09894b783e4d57476fc76972c533b
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
