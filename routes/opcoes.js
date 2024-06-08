@@ -25,7 +25,7 @@ router.post('/calculate-option-price', function(req, res, next) {
       <body>
         <h1>Option Price Result</h1>
         <p>Option Price: ${optionPrice}</p>
-        <a href="/option-price">Back to Calculator</a>
+        <a href="/option">Back to Calculator</a>
       </body>
     </html>
   `);
@@ -38,11 +38,13 @@ function calculateEuropeanOptionPrice(S, K, T, v, r, optionType) {
   const nd1 = normalCDF(d1);
   const nd2 = normalCDF(d2);
 
+  let price;
   if (optionType === 'call') {
-    return S * nd1 - K * Math.exp(-r * T) * nd2;
+    price = S * nd1 - K * Math.exp(-r * T) * nd2;
   } else {
-    return K * Math.exp(-r * T) * normalCDF(-d2) - S * normalCDF(-d1);
+    price = K * Math.exp(-r * T) * normalCDF(-d2) - S * normalCDF(-d1);
   }
+  return parseFloat(price.toFixed(2));
 }
 
 // Binomial Model for American Options
@@ -76,7 +78,7 @@ function calculateAmericanOptionPrice(S, K, T, v, r, optionType) {
     }
   }
 
-  return optionValues[0];
+  return parseFloat(optionValues[0].toFixed(2));
 }
 
 function normalCDF(x) {
