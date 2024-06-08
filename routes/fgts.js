@@ -1,5 +1,5 @@
 var express = require('express');
-var { calculaFgts } = require('../public/javascripts/fgts_script.js'); // Use require instead of import
+var { calculaFgts } = require('../public/javascripts/fgts_script.js');
 var router = express.Router();
 var path = require('path');
 
