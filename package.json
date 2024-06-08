@@ -9,7 +9,6 @@
     "test2": "jest --verbose ./test2",
     "F-test": "node ./test/FuncionalExemplo",
     "test3": "jest --verbose",
-    "F-test": "node ./test/FuncionalExemplo"
     "F-darf-test": "node ./test/FuncionalDarf"
 
   },
