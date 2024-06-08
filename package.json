@@ -11,6 +11,7 @@
     "F-test": "node ./test/FuncionalExemplo",
     "F-darf-test": "node ./test/FuncionalDarf",
     "F-fgts-test": "node ./test/FuncionalFgts",
+    "F-opcoes-test": "node ./test/FuncionalOpcoes",
     "e2e-test": "start-server-and-test start http://localhost:3000/test"
 
   },
