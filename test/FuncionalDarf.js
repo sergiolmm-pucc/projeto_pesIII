@@ -15,6 +15,12 @@ function esperarTextoAtualizarPorRequisicao(textoInicial) {
   };
 }
 
+const makeDirs = (dir) => {
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
+};
+
 (async () => {
 
    // Configuração do ambiente do WebDriver e opções do navegador
@@ -47,7 +53,7 @@ function esperarTextoAtualizarPorRequisicao(textoInicial) {
     // Esperar o site carregar completamente
 
     await driver.takeScreenshot().then((image, err) => {
-        require('fs').writeFile('./fotos/darf/inicio-darf.png', image, 'base64', function (err) {
+        require('fs').writeFileSync('./fotos/darf/inicio-darf.png', image, 'base64', function (err) {
           if (err == null){
               console.log('Gravou Foto');
           }else{
@@ -63,7 +69,7 @@ function esperarTextoAtualizarPorRequisicao(textoInicial) {
 
    // Captura de tela final
     await driver.takeScreenshot().then((image, err) => {
-      require('fs').writeFile('./fotos/darf/valorDigitado-darf.png', image, 'base64', function (err) {
+      require('fs').writeFileSync('./fotos/darf/valorDigitado-darf.png', image, 'base64', function (err) {
         if (err == null){
             console.log('Gravou Foto');
         }else{
@@ -92,7 +98,7 @@ function esperarTextoAtualizarPorRequisicao(textoInicial) {
 
     // Captura de tela final
     await driver.takeScreenshot().then((image, err) => {
-      require('fs').writeFile('./fotos/darf/fim-darf.png', image, 'base64', function (err) {
+      require('fs').writeFileSync('./fotos/darf/fim-darf.png', image, 'base64', function (err) {
         if (err == null){
             console.log('Gravou Foto');
         }else{
