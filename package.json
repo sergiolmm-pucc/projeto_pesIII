@@ -8,10 +8,10 @@
     "test3": "jest --verbose",
     "test": "jest --ci --reportes=default --reporters=jest-junit",
     "test2": "jest --verbose ./test2",
-    "F-test": "node ./test/FuncionalExemplo",
-  
-    "F-darf-test": "node ./test/FuncionalDarf"
 
+    "F-test": "node ./test/FuncionalExemplo",
+    "F-darf-test": "node ./test/FuncionalDarf",
+    "F-fgts-test": "node ./test/FuncionalFgts"
   },
   "jest-junit": {
     "suiteName": "jest tests",
@@ -37,6 +37,7 @@
   "devDependencies": {
     "@eslint/js": "^9.1.1",
     "eslint": "^9.1.0",
-    "globals": "^15.0.0"
+    "globals": "^15.0.0",
+    "start-server-and-test": "^2.0.4"
   }
 }
