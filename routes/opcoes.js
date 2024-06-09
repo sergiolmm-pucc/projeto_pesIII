@@ -18,18 +18,62 @@ router.post('/calculate-option-price', function(req, res) {
   }
 
   res.send(`
-    <html>
-      <head>
-        <title>Option Price Result</title>
-      </head>
-      <body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Option Price Result</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f4f4f9;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+        .container {
+          background-color: #ffffff;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          text-align: center;
+        }
+        h1 {
+          color: #333;
+        }
+        p {
+          font-size: 1.2em;
+          color: #555;
+        }
+        a {
+          display: inline-block;
+          margin-top: 20px;
+          padding: 10px 20px;
+          background-color: #007bff;
+          color: #ffffff;
+          text-decoration: none;
+          border-radius: 5px;
+        }
+        a:hover {
+          background-color: #0056b3;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
         <h1>Option Price Result</h1>
         <p>Option Price: ${optionPrice}</p>
         <a href="/option">Back to Calculator</a>
-      </body>
+      </div>
+    </body>
     </html>
   `);
 });
+
 
 // Black-Scholes Model for European Options
 function calculateEuropeanOptionPrice(S, K, T, v, r, optionType) {
