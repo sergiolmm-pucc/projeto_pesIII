@@ -1,7 +1,6 @@
-const { installment } = require('../public/javascripts/finan');
+const { callInstallment, installment } = require('../public/javascripts/finan');
 
 describe('Teste financiamento 1', () => {
-
   beforeAll(() => {
     document.body.innerHTML = `
       <form id="form">
@@ -19,5 +18,11 @@ describe('Teste financiamento 1', () => {
   test('Financiamento imobiliario', () => {
     const result = installment(100000, 30000, 36, 'Casa');
     expect(result).toBeCloseTo(1954, 0);
+  });
+
+  test('Call installment updates result_final', () => {
+    callInstallment();
+    const resultElement = document.getElementById('result_final');
+    expect(resultElement.textContent).toBe('Prestação: R$1954.17');
   });
 });

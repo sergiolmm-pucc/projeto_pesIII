@@ -46,9 +46,11 @@ function callInstallment() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        callInstallment();
+if (typeof document !== 'undefined') {
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            callInstallment();
+        });
     });
-});
+};
