@@ -46,8 +46,6 @@ function callInstallment() {
     }
 }
 
-console.log(1)
-
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('form').addEventListener('submit', function(event) {
         event.preventDefault();
