@@ -1,51 +1,61 @@
 function installment(value, propertyValue, term, type) {
     let prestacao;
-    if (type == "Casa" || type == "Apartamento") 
-    {
-        {
-            const jurosMensal = (6 / 12)/100;
-            const new_value = value - propertyValue
-            const valor_por_mes = new_value / term
-            const juros_final = valor_por_mes * jurosMensal
-            const _prestacao = valor_por_mes + juros_final
-            prestacao = _prestacao
-        }
+    let jurosMensal;
+    
+    if (type === "Casa" || type === "Apartamento") {
+        jurosMensal = 6 / 12 / 100;
+    } else if (type === "Terreno") {
+        jurosMensal = 8 / 12 / 100;
+    } else {
+        throw new Error('Tipo de imóvel inválido');
     }
-    if (type == "Terreno")
-        {
-            const jurosMensal = (8 / 12)/100;
-            const new_value = value - propertyValue
-            const valor_por_mes = new_value / term
-            const juros_final = valor_por_mes * jurosMensal
-            const _prestacao = valor_por_mes + juros_final
-            prestacao = _prestacao
-        }
+
+    const newValue = value - propertyValue;
+    const valorPorMes = newValue / term;
+    const jurosFinal = valorPorMes * jurosMensal;
+    prestacao = valorPorMes + jurosFinal;
+
     return prestacao;
 }
 
-
 function callInstallment() {
-    const valueProperty = parseFloat(document.getElementById('propertyValue').value);
-    const valueImovel = parseInt(document.getElementById('valueImovel').value);
-    const valueTerm = parseInt(document.getElementById('term').value);
+    const propertyValueElement = document.getElementById('propertyValue');
+    const valueImovelElement = document.getElementById('valueImovel');
+    const termElement = document.getElementById('term');
     const selectElement = document.getElementById('typeImovel');
+    const resultElement = document.getElementById('result_final');
+
+    if (!propertyValueElement || !valueImovelElement || !termElement || !selectElement || !resultElement) {
+        console.error('Elementos do DOM não encontrados.');
+        return;
+    }
+
+    const valueProperty = parseFloat(propertyValueElement.value);
+    const valueImovel = parseInt(valueImovelElement.value);
+    const valueTerm = parseInt(termElement.value);
     const type = selectElement.value;
 
     console.log("Valores do DOM:", { valueProperty, valueImovel, valueTerm, type });
 
-    const result = installment(valueImovel, valueProperty, valueTerm, type);
-
-    console.log("Resultado da prestação:", result);
-    const resultElement = document.getElementById('result_final');
-    if (result.Error) {
-        resultElement.textContent = result.Error;
+    if (isNaN(valueProperty) || isNaN(valueImovel) || isNaN(valueTerm)) {
+        resultElement.textContent = 'Por favor, insira valores numéricos válidos.';
         resultElement.style.color = 'red';
-    } else {
+        return;
+    }
+
+    try {
+        const result = installment(valueImovel, valueProperty, valueTerm, type);
+        console.log("Resultado da prestação:", result);
         resultElement.textContent = `R$${result.toFixed(2)} Por Mês`;
         resultElement.style.color = 'black';
+    } catch (error) {
+        resultElement.textContent = error.message;
+        resultElement.style.color = 'red';
     }
 }
-document.getElementById('form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    callInstallment();
-});;
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        callInstallment();
+    });
+});
