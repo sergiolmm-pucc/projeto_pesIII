@@ -41,7 +41,7 @@ function callInstallment() {
         resultElement.textContent = result.Error;
         resultElement.style.color = 'red';
     } else {
-        resultElement.textContent = `Prestação: R$${result.toFixed(2)}`;
+        resultElement.textContent = `R$${result.toFixed(2)} Por Mês`;
         resultElement.style.color = 'black';
     }
 }
