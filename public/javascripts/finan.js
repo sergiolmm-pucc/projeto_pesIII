@@ -45,10 +45,7 @@ function callInstallment() {
         resultElement.style.color = 'black';
     }
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        callInstallment();
-    });
-});
+document.getElementById('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    callInstallment();
+});;
