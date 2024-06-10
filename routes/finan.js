@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 const path = require('path')
-//const finan = require('../public/javascripts/finan')
 
 
 /* GET users listing. */
