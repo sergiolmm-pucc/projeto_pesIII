@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 const { callInstallment, installment } = require('../public/javascripts/finan');
 
 describe('Teste financiamento 1', () => {
