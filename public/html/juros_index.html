@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora de Empréstimo Consignado</title>
+        <link rel="stylesheet" href="../stylesheets/juros_styles.css">
+    </head>
+    <body>
+        <h1>Calculadora de Juros Compostos e</h1>
+        <h1>Empréstimo Consignado</h1>
+        <form id="loanCalculator">
+            <label for="loanAmount">Valor do Empréstimo (R$):</label>
+            <input type="number" id="loanAmount" name="loanAmount" required><br><br>
+
+            <label for="loanTerm">Parcelas Restantes:</label>
+            <input type="number" id="loanTerm" name="loanTerm" required><br><br>
+
+            <label for="interestRate">Taxa de Juros:</label>
+            <input type="number" id="interestRate" name="interestRate" required><br><br>
+
+            <label for="interestType">Tipo de Juros:</label>
+            <select id="interestType" name="interestType">
+                <option value="monthly">Ao Mês</option>
+                <option value="yearly">Ao Ano</option>
+            </select><br><br>
+
+            <button type="button" onclick="calculateLoan()">Calcular</button>
+        </form>
+
+        <div id="results" style="display: none;">
+            <h2>Resultados</h2>
+            <p>Tempo para quitar o empréstimo: <span id="timeToRepay"></span></p>
+            <p>Total pago: R$ <span id="totalAmountPaid"></span></p>
+            <p>Total de juros pagos: R$ <span id="totalInterestPaid"></span></p>
+        </div>
+        <script src="../javascripts/juros_script.js"></script>
+    </body>
+</html>
