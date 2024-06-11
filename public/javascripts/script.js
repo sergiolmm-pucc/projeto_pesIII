@@ -178,12 +178,15 @@ const taxas = {
                     break;
             }
     
-            const valorConvertido = valor1.value * taxa * (1 + taxaPercentual);
+            const valorConvertido = valor1.value * taxa * (1 + taxaPercentual * taxa);
+            console.log("Valor convertido (bruto):", valorConvertido);
             valor2.value = valorConvertido.toFixed(2);
+            console.log("Valor convertido (formatado):", valor2.value);
         }
     
         moeda1.addEventListener('change', atualizarValor2);
         moeda2.addEventListener('change', atualizarValor2);
         valor1.addEventListener('input', atualizarValor2);
         selectTaxa.addEventListener('change', atualizarValor2);
+
     });
