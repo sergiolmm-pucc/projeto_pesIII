@@ -14,7 +14,7 @@ var custosRouter = require('./routes/custo');
 var cambio = require('./routes/cambio.js');
 var opcoes = require('./routes/opcoes.js');
 var finanRouter = require('./routes/finan')
-var jurosRouter = require('./routes/juros.js')
+var jurosRouter = require('./routes/juros')
 
 var exampleRouter = require('./routes/example');
 
