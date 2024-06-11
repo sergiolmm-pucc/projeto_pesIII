@@ -4,7 +4,65 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Calculadora de Empréstimo Consignado</title>
-        <link rel="stylesheet" href="../stylesheets/juros_styles.css">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            #loanForm {
+                max-width: 400px;
+                margin: 20px auto;
+                padding: 20px;
+                background-color: #f9f9f9;
+                border-radius: 8px;
+                box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            }
+
+            #loanForm label,
+            #loanForm select,
+            #loanForm input[type="number"],
+            #loanForm button {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            #loanForm input[type="number"],
+            #loanForm select {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            #loanForm button {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                padding: 10px 20px;
+            }
+
+            #loanForm button:hover {
+                background-color: #45a049;
+            }
+
+            #results {
+                max-width: 400px;
+                margin: 20px auto;
+                padding: 20px;
+                background-color: #f9f9f9;
+                border-radius: 8px;
+                box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            }
+        </style>
     </head>
     <body>
         <h1>Calculadora de Juros Compostos e</h1>
@@ -34,6 +92,35 @@
             <p>Total pago: R$ <span id="totalAmountPaid"></span></p>
             <p>Total de juros pagos: R$ <span id="totalInterestPaid"></span></p>
         </div>
-        <script src="../javascripts/juros_script.js"></script>
+        <script>
+            function calculateLoan() {
+            const loanAmount = parseFloat(document.getElementById('loanAmount').value);
+            const loanTerm = parseInt(document.getElementById('loanTerm').value);
+            const interestRate = parseFloat(document.getElementById('interestRate').value);
+            const interestType = document.getElementById('interestType').value;
+
+            let totalAmountPaid;
+            let totalInterestPaid;
+            let monthlyInterestRate;
+            let timeToRepay;
+
+            if (interestType === "monthly") {
+                monthlyInterestRate = interestRate / 100;
+                totalAmountPaid = loanAmount * Math.pow(1 + monthlyInterestRate, loanTerm);
+                totalInterestPaid = totalAmountPaid - loanAmount;
+                timeToRepay = loanTerm;
+            } else if (interestType === "yearly") {
+                monthlyInterestRate = interestRate / (12 * 100);
+                timeToRepay = loanTerm * 12;
+                totalAmountPaid = loanAmount * Math.pow(1 + monthlyInterestRate, timeToRepay);
+                totalInterestPaid = totalAmountPaid - loanAmount;
+            }
+
+            document.getElementById('timeToRepay').innerText = timeToRepay + ' meses';
+            document.getElementById('totalAmountPaid').innerText = totalAmountPaid.toFixed(2);
+            document.getElementById('totalInterestPaid').innerText = totalInterestPaid.toFixed(2);
+            document.getElementById('results').style.display = 'block';
+        }
+        </script>
     </body>
 </html>
