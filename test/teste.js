@@ -1,9 +1,9 @@
 function assertEquals(actual, expected, message) {
-    if (actual !== expected) {
-        console.error(`Assertion failed: ${message}. Expected ${expected}, but got ${actual}`);
-    } else {
-        console.log(`Assertion passed: ${message}. Expected ${expected}, and got ${actual}`);
-    }
+  if (actual !== expected) {
+      console.error(`Teste falhou: ${message}. Esperado ${expected}, mas obteve ${actual}`);
+  } else {
+      console.log(`Teste com sucesso: ${message}. Esperado ${expected}, e obteve ${actual}`);
+  }
 }
 
 function testConversao(moedaOrigem, moedaDestino, valor, taxaSelecionada, expected) {
