@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/juros', function(req, res) {
-  res.sendFile(__dirname + "/../public/html/juros_index.html");
+  res.sendFile(path.join(__dirname, '../views/juros_index.html'));
 });
 
 router.post('/calculateLoan', function(req, res) {
