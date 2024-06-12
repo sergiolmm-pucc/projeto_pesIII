@@ -1,5 +1,8 @@
 function installment(value, propertyValue, term, type) {
-    let prestacao;
+    if (value < 0 || propertyValue < 0 || term < 0) {
+        throw new Error("Os valores não podem ser negativos");
+    }
+    
     let jurosMensal;
     
     if (type === "Casa" || type === "Apartamento") {
@@ -11,11 +14,12 @@ function installment(value, propertyValue, term, type) {
     }
 
     const newValue = value - propertyValue;
-    const valorPorMes = newValue / term;
-    const jurosFinal = valorPorMes * jurosMensal;
-    prestacao = valorPorMes + jurosFinal;
+    const r = jurosMensal;
+    const n = term;
+    const P = newValue;
 
-    return prestacao.toFixed(2);
+    const prestacao = (P * r * Math.pow((1 + r), n)) / (Math.pow((1 + r), n) - 1);
+    return parseFloat(prestacao.toFixed(2));
 }
 
 function callInstallment(valueProperty, valueImovel, valueTerm, type) {
