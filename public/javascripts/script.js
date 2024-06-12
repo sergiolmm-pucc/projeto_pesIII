@@ -178,7 +178,7 @@ const taxas = {
                     break;
             }
     
-            const valorConvertido = valor1.value * taxa * (1 + taxaPercentual * taxa);
+            const valorConvertido = valor1.value * taxa * (1 + taxaPercentual);
             console.log("Valor convertido (bruto):", valorConvertido);
             valor2.value = valorConvertido.toFixed(2);
             console.log("Valor convertido (formatado):", valor2.value);
