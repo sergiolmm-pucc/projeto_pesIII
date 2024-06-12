@@ -15,7 +15,7 @@ function installment(value, propertyValue, term, type) {
     const jurosFinal = valorPorMes * jurosMensal;
     prestacao = valorPorMes + jurosFinal;
 
-    return prestacao;
+    return prestacao.toFixed(2);
 }
 
 function callInstallment() {
