@@ -1,4 +1,4 @@
-const { installment, calculateInstallment } = require('../public/javascripts/finan');
+const { installment, callInstallment } = require('../public/javascripts/finan');
 const { describe, test, expect } = require('@jest/globals');
 
 describe("Teste financiamento", ()=>{
@@ -17,10 +17,10 @@ describe("Teste financiamento", ()=>{
     });
 
     test("calculateInstallment lida com valores válidos corretamente", () => {
-        expect(calculateInstallment(1000, 500, 12, 'Casa')).toBe(43.75);
+        expect(callInstallment(1000, 500, 12, 'Casa')).toBe(43.75);
     });
 
     test("calculateInstallment lança erro com valores inválidos", () => {
-        expect(() => calculateInstallment('abc', 500, 12, 'Casa')).toThrow('Por favor, insira valores numéricos válidos.');
+        expect(() => callInstallment('abc', 500, 12, 'Casa')).toThrow('Por favor, insira valores numéricos válidos.');
     });
 });
