@@ -9,10 +9,10 @@ describe("Teste financiamento", () => {
     });
 
     test("O financiamento está correto?", () => {
-        expect(installment(100000, 1000, 30000, 'Casa')).toBeCloseTo(1954.17, 2);
+        expect(installment(100000,30000, 16, 'Casa')).toBeCloseTo(4396.88, 2);
     });
 
     test("O financiamento está errado?", () => {
-        expect(installment(100000, 1000, 30000, 'Casa')).not.toBeCloseTo(1000.00, 2);
+        expect(installment(100000, 30000, 16, 'Casa')).not.toBeCloseTo(1000.00, 2);
     });
 });
