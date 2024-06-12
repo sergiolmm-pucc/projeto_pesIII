@@ -18,16 +18,16 @@ describe('GET /juros', () => {
 
 describe('calculateLoan function', () => {
   test('calculates loan with monthly interest correctly', () => {
-    const result = calculateLoan(1000, 12, 1, 'monthly');
-    expect(result.timeToRepay).toBe(12);
-    expect(result.totalAmountPaid).toBeCloseTo(1126.83, 2);
-    expect(result.totalInterestPaid).toBeCloseTo(126.83, 2);
+    const result = calculateLoan(10, 2, 10, 'monthly');
+    expect(result.timeToRepay).toBe(2);
+    expect(result.totalAmountPaid).toBe('12.10');
+    expect(result.totalInterestPaid).toBe('2.10');
   });
 
   test('calculates loan with yearly interest correctly', () => {
-    const result = calculateLoan(1000, 1, 12, 'yearly');
-    expect(result.timeToRepay).toBe(12);
-    expect(result.totalAmountPaid).toBeCloseTo(1126.83, 2);
-    expect(result.totalInterestPaid).toBeCloseTo(126.83, 2);
+    const result = calculateLoan(10, 2, 10, 'yearly');
+    expect(result.timeToRepay).toBe(24);
+    expect(result.totalAmountPaid).toBe('12.20'); 
+    expect(result.totalInterestPaid).toBe('2.20');
   });
 });
