@@ -1,7 +1,15 @@
-function openModal() {
+function openModal(validarCamposFn, calcularInvestimentoFn) {
     console.log("Abrindo modal...");
-    if (validarCampos()) {
-        calcularInvestimento();
+    if (validarCamposFn()) {
+        const resultado = calcularInvestimentoFn(
+            parseFloat(document.getElementById('initial-investment').value.replace(/R\$ /g, '').replace(',', '.')),
+            parseFloat(document.getElementById('monthly-investment').value.replace(/R\$ /g, '').replace(',', '.')),
+            parseFloat(document.getElementById('profitability').value.replace('%', '').replace(',', '.')),
+            parseInt(document.getElementById('duration').value),
+            document.getElementById('duration-unit').value,
+            document.getElementById('profitability-period').value
+        );
+        exibirResultados(resultado);
         $('#modal').modal('show');
     }
 }
@@ -27,16 +35,8 @@ function validarCampos() {
     return camposValidos;
 }
 
-function calcularInvestimento() {
+function calcularInvestimento(investimentoInicial, investimentoMensal, rentabilidade, prazo, prazoUnidade, rentabilidadePeriodo) {
     console.log("Calculando investimento...");
-    
-    // Obter valores de entrada
-    const investimentoInicial = parseFloat(document.getElementById('initial-investment').value.replace(/R\$ /g, '').replace(',', '.'));
-    const investimentoMensal = parseFloat(document.getElementById('monthly-investment').value.replace(/R\$ /g, '').replace(',', '.'));
-    const rentabilidade = parseFloat(document.getElementById('profitability').value.replace('%', '').replace(',', '.'));
-    const prazo = parseInt(document.getElementById('duration').value);
-    const prazoUnidade = document.getElementById('duration-unit').value;
-    const rentabilidadePeriodo = document.getElementById('profitability-period').value;
 
     // Calcular a taxa mensal de rentabilidade
     const taxaMensal = rentabilidadePeriodo === 'Anual' ? (Math.pow(1 + rentabilidade / 100, 1 / 12) - 1) : rentabilidade / 100;
@@ -51,19 +51,29 @@ function calcularInvestimento() {
     // Calcular total de contribuições
     const totalContribuicoes = investimentoInicial + (investimentoMensal * prazoMeses);
     const lucro = valorBruto - totalContribuicoes;
-    
+
     // Calcular imposto
     const imposto = calcularImposto(lucro, prazoMeses);
     const taxaIRPercentual = calcularTaxaImpostoPercentual(prazoMeses);
     const valorLiquido = valorBruto - imposto;
 
-    // Exibir resultados
-    document.getElementById('valorBruto').textContent = 'Valor Bruto: R$' + valorBruto.toFixed(2);
-    document.getElementById('impostos').textContent = 'Impostos: R$' + imposto.toFixed(2);
-    document.getElementById('taxaImposto').textContent = 'Taxa de Imposto: ' + taxaIRPercentual + '%';
-    document.getElementById('valorTotalInvestido').textContent = 'Valor Total Investido: R$' + totalContribuicoes.toFixed(2);
-    document.getElementById('valorEmJuros').textContent = 'Valor em Juros: R$' + lucro.toFixed(2);
-    document.getElementById('valorLiquido').textContent = 'Valor Líquido: R$' + valorLiquido.toFixed(2);
+    return {
+        valorBruto: valorBruto.toFixed(2),
+        imposto: imposto.toFixed(2),
+        taxaIRPercentual: taxaIRPercentual,
+        totalContribuicoes: totalContribuicoes.toFixed(2),
+        lucro: lucro.toFixed(2),
+        valorLiquido: valorLiquido.toFixed(2)
+    };
+}
+
+function exibirResultados(resultado) {
+    document.getElementById('valorBruto').textContent = 'Valor Bruto: R$' + resultado.valorBruto;
+    document.getElementById('impostos').textContent = 'Impostos: R$' + resultado.imposto;
+    document.getElementById('taxaImposto').textContent = 'Taxa de Imposto: ' + resultado.taxaIRPercentual + '%';
+    document.getElementById('valorTotalInvestido').textContent = 'Valor Total Investido: R$' + resultado.totalContribuicoes;
+    document.getElementById('valorEmJuros').textContent = 'Valor em Juros: R$' + resultado.lucro;
+    document.getElementById('valorLiquido').textContent = 'Valor Líquido: R$' + resultado.valorLiquido;
 }
 
 function calcularImposto(lucro, prazoMeses) {
@@ -94,12 +104,18 @@ function calcularTaxaImpostoPercentual(prazoMeses) {
     }
 }
 
-document.querySelector('.calculate').addEventListener('click', function(event) {
-    event.preventDefault();
-    openModal();
-});
+// Verificar se estamos no navegador antes de adicionar event listeners
+if (typeof document !== 'undefined') {
+    document.querySelector('.calculate').addEventListener('click', function(event) {
+        event.preventDefault();
+        openModal(validarCampos, calcularInvestimento);
+    });
 
-document.querySelector('.close-btn').addEventListener('click', function(event) {
-    event.preventDefault();
-    closeModal();
-});
+    document.querySelector('.close-btn').addEventListener('click', function(event) {
+        event.preventDefault();
+        closeModal();
+    });
+}
+
+// Exportar funções para testes
+module.exports = { openModal, closeModal, validarCampos, calcularInvestimento, calcularImposto, calcularTaxaImpostoPercentual };
