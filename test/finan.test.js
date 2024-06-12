@@ -1,4 +1,4 @@
-const { installment } = require('../javascripts/finan.js');
+const { installment } = require('../public/javascripts/finan');
 const { describe, test, expect } = require('@jest/globals');
 
 describe("Teste financiamento", ()=>{
