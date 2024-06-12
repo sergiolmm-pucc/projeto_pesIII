@@ -1,53 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="18" failures="0" errors="0" time="2.449">
-  <testsuite name="test\CalcularTest.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-08T22:40:28" time="0.84" tests="2">
-    <testcase classname="Teste basico 1-Valores corretos" name="Teste basico 1-Valores corretos" time="0.026">
+<testsuites name="jest tests" tests="25" failures="2" errors="0" time="4.391">
+  <testsuite name="test\Exemplo2.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-12T00:45:51" time="1.842" tests="1">
+    <testcase classname="Teste exemplo 3-Funcao calcularArea" name="Teste exemplo 3-Funcao calcularArea" time="0.013">
+    </testcase>
+  </testsuite>
+  <testsuite name="test\CalcularTest.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-12T00:45:51" time="1.832" tests="2">
+    <testcase classname="Teste basico 1-Valores corretos" name="Teste basico 1-Valores corretos" time="0.027">
     </testcase>
     <testcase classname="Teste basico 1-CalcularCubo de 3 " name="Teste basico 1-CalcularCubo de 3 " time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="test\CalcFgts.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-08T22:40:28" time="0.846" tests="4">
-    <testcase classname="Teste FGTS-deve lançar um erro quando os tipos dos parâmetros estão errados" name="Teste FGTS-deve lançar um erro quando os tipos dos parâmetros estão errados" time="0.021">
+  <testsuite name="test\CalcFgts.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-12T00:45:51" time="1.922" tests="4">
+    <testcase classname="Teste FGTS-deve lançar um erro quando os tipos dos parâmetros estão errados" name="Teste FGTS-deve lançar um erro quando os tipos dos parâmetros estão errados" time="0.044">
     </testcase>
-    <testcase classname="Teste FGTS-deve lançar um erro quando os parâmetros são negativos" name="Teste FGTS-deve lançar um erro quando os parâmetros são negativos" time="0.006">
+    <testcase classname="Teste FGTS-deve lançar um erro quando os parâmetros são negativos" name="Teste FGTS-deve lançar um erro quando os parâmetros são negativos" time="0.004">
     </testcase>
-    <testcase classname="Teste FGTS-o cálculo do FGTS está correto?" name="Teste FGTS-o cálculo do FGTS está correto?" time="0">
+    <testcase classname="Teste FGTS-o cálculo do FGTS está correto?" name="Teste FGTS-o cálculo do FGTS está correto?" time="0.001">
     </testcase>
-    <testcase classname="Teste FGTS-o cálculo do FGTS está incorreto?" name="Teste FGTS-o cálculo do FGTS está incorreto?" time="0">
-    </testcase>
-  </testsuite>
-  <testsuite name="test\Exemplo2.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-08T22:40:28" time="0.822" tests="1">
-    <testcase classname="Teste exemplo 3-Funcao calcularArea" name="Teste exemplo 3-Funcao calcularArea" time="0.019">
+    <testcase classname="Teste FGTS-o cálculo do FGTS está incorreto?" name="Teste FGTS-o cálculo do FGTS está incorreto?" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="test\Exemplo.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-08T22:40:28" time="0.805" tests="1">
-    <testcase classname="Teste exemplo 1-Funcao calcularArea" name="Teste exemplo 1-Funcao calcularArea" time="0.01">
+  <testsuite name="test\Calc2.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-12T00:45:51" time="1.904" tests="2">
+    <testcase classname="Teste basico 2-Valores " name="Teste basico 2-Valores " time="0.074">
+    </testcase>
+    <testcase classname="Teste basico 2-CalcularCubo com string " name="Teste basico 2-CalcularCubo com string " time="0.002">
     </testcase>
   </testsuite>
-  <testsuite name="test\darf.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-08T22:40:28" time="0.837" tests="4">
-    <testcase classname="Teste Darf-should throw an error when parameter types are wrong" name="Teste Darf-should throw an error when parameter types are wrong" time="0.022">
+  <testsuite name="test\Renda.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-12T00:45:51" time="1.964" tests="4">
+    <testcase classname="Teste Cálculo de Investimento-should calculate the correct gross value" name="Teste Cálculo de Investimento-should calculate the correct gross value" time="0.021">
     </testcase>
-    <testcase classname="Teste Darf-is the darf fee right?" name="Teste Darf-is the darf fee right?" time="0">
+    <testcase classname="Teste Cálculo de Investimento-should calculate the correct net value after tax" name="Teste Cálculo de Investimento-should calculate the correct net value after tax" time="0.002">
+    </testcase>
+    <testcase classname="Teste Cálculo de Imposto-should calculate the correct tax for short term investment" name="Teste Cálculo de Imposto-should calculate the correct tax for short term investment" time="0.001">
+    </testcase>
+    <testcase classname="Teste Cálculo de Imposto-should calculate the correct tax for long term investment" name="Teste Cálculo de Imposto-should calculate the correct tax for long term investment" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="test\darf.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-12T00:45:51" time="1.939" tests="4">
+    <testcase classname="Teste Darf-should throw an error when parameter types are wrong" name="Teste Darf-should throw an error when parameter types are wrong" time="0.028">
+    </testcase>
+    <testcase classname="Teste Darf-is the darf fee right?" name="Teste Darf-is the darf fee right?" time="0.001">
     </testcase>
     <testcase classname="Teste Darf-is the darf fee wrong?" name="Teste Darf-is the darf fee wrong?" time="0.001">
     </testcase>
-    <testcase classname="Teste Darf-is the avg price right?" name="Teste Darf-is the avg price right?" time="0">
+    <testcase classname="Teste Darf-is the avg price right?" name="Teste Darf-is the avg price right?" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="test\Calc2.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-08T22:40:28" time="0.841" tests="2">
-    <testcase classname="Teste basico 2-Valores " name="Teste basico 2-Valores " time="0.019">
-    </testcase>
-    <testcase classname="Teste basico 2-CalcularCubo com string " name="Teste basico 2-CalcularCubo com string " time="0">
+  <testsuite name="test\Exemplo.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-12T00:45:51" time="1.879" tests="1">
+    <testcase classname="Teste exemplo 1-Funcao calcularArea" name="Teste exemplo 1-Funcao calcularArea" time="0.016">
     </testcase>
   </testsuite>
-  <testsuite name="test\opcoes.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-08T22:40:28" time="2.137" tests="4">
-    <testcase classname="Option Pricing Calculations-calculateEuropeanOptionPrice for call option" name="Option Pricing Calculations-calculateEuropeanOptionPrice for call option" time="0.006">
+  <testsuite name="test\juros.test.js" errors="0" failures="2" skipped="0" timestamp="2024-06-12T00:45:51" time="2.603" tests="3">
+    <testcase classname="GET /juros-should return the juros_index.html file" name="GET /juros-should return the juros_index.html file" time="0.052">
     </testcase>
-    <testcase classname="Option Pricing Calculations-calculateEuropeanOptionPrice for put option" name="Option Pricing Calculations-calculateEuropeanOptionPrice for put option" time="0">
+    <testcase classname="calculateLoan function-calculates loan with monthly interest correctly" name="calculateLoan function-calculates loan with monthly interest correctly" time="0.003">
+      <failure>Error: expect(received).toBeCloseTo(expected, precision)
+
+Matcher error: received value must be a number
+
+Received has type:  string
+Received has value: &quot;1126.83&quot;
+    at Object.toBeCloseTo (C:\Users\p_ped\OneDrive\Área de Trabalho\Projeto PESIII\projeto_pesIII\test\juros.test.js:23:36)
+    at Promise.then.completed (C:\Users\p_ped\OneDrive\Área de Trabalho\Projeto PESIII\projeto_pesIII\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\p_ped\OneDrive\Área de Trabalho\Projeto PESIII\projeto_pesIII\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\p_ped\OneDrive\Área de Trabalho\Projeto PESIII\projeto_pesIII\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (C:\Users\p_ped\OneDrive\Área de Trabalho\Projeto PESIII\projeto_pesIII\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\p_ped\OneDrive\Área de Trabalho\Projeto PESIII\projeto_pesIII\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\p_ped\OneDrive\Área de Trabalho\Projeto PESIII\projeto_pesIII\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\p_ped\OneDrive\Área de Trabalho\Projeto PESIII\projeto_pesIII\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\p_ped\OneDrive\Área de Trabalho\Projeto PESIII\projeto_pesIII\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\p_ped\OneDrive\Área de Trabalho\Projeto PESIII\projeto_pesIII\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\p_ped\OneDrive\Área de Trabalho\Projeto PESIII\projeto_pesIII\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\p_ped\OneDrive\Área de Trabalho\Projeto PESIII\projeto_pesIII\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\p_ped\OneDrive\Área de Trabalho\Projeto PESIII\projeto_pesIII\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
     </testcase>
-    <testcase classname="Option Pricing Calculations-calculateAmericanOptionPrice for call option" name="Option Pricing Calculations-calculateAmericanOptionPrice for call option" time="0.487">
+    <testcase classname="calculateLoan function-calculates loan with yearly interest correctly" name="calculateLoan function-calculates loan with yearly interest correctly" time="0">
+      <failure>Error: expect(received).toBeCloseTo(expected, precision)
+
+Matcher error: received value must be a number
+
+Received has type:  string
+Received has value: &quot;1126.83&quot;
+    at Object.toBeCloseTo (C:\Users\p_ped\OneDrive\Área de Trabalho\Projeto PESIII\projeto_pesIII\test\juros.test.js:30:36)
+    at Promise.then.completed (C:\Users\p_ped\OneDrive\Área de Trabalho\Projeto PESIII\projeto_pesIII\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\p_ped\OneDrive\Área de Trabalho\Projeto PESIII\projeto_pesIII\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\p_ped\OneDrive\Área de Trabalho\Projeto PESIII\projeto_pesIII\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (C:\Users\p_ped\OneDrive\Área de Trabalho\Projeto PESIII\projeto_pesIII\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\p_ped\OneDrive\Área de Trabalho\Projeto PESIII\projeto_pesIII\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\p_ped\OneDrive\Área de Trabalho\Projeto PESIII\projeto_pesIII\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\p_ped\OneDrive\Área de Trabalho\Projeto PESIII\projeto_pesIII\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\p_ped\OneDrive\Área de Trabalho\Projeto PESIII\projeto_pesIII\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\p_ped\OneDrive\Área de Trabalho\Projeto PESIII\projeto_pesIII\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\p_ped\OneDrive\Área de Trabalho\Projeto PESIII\projeto_pesIII\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\p_ped\OneDrive\Área de Trabalho\Projeto PESIII\projeto_pesIII\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\p_ped\OneDrive\Área de Trabalho\Projeto PESIII\projeto_pesIII\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
     </testcase>
-    <testcase classname="Option Pricing Calculations-calculateAmericanOptionPrice for put option" name="Option Pricing Calculations-calculateAmericanOptionPrice for put option" time="0.508">
+  </testsuite>
+  <testsuite name="test\opcoes.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-12T00:45:51" time="3.795" tests="4">
+    <testcase classname="Option Pricing Calculations-calculateEuropeanOptionPrice for call option" name="Option Pricing Calculations-calculateEuropeanOptionPrice for call option" time="0.012">
+    </testcase>
+    <testcase classname="Option Pricing Calculations-calculateEuropeanOptionPrice for put option" name="Option Pricing Calculations-calculateEuropeanOptionPrice for put option" time="0.001">
+    </testcase>
+    <testcase classname="Option Pricing Calculations-calculateAmericanOptionPrice for call option" name="Option Pricing Calculations-calculateAmericanOptionPrice for call option" time="0.735">
+    </testcase>
+    <testcase classname="Option Pricing Calculations-calculateAmericanOptionPrice for put option" name="Option Pricing Calculations-calculateAmericanOptionPrice for put option" time="0.691">
     </testcase>
   </testsuite>
 </testsuites>
