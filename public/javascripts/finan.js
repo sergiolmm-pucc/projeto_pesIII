@@ -30,35 +30,3 @@ function installment(value, propertyValue, term, type) {
     return Number(prestacao.toFixed(2));
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        const propertyValueElement = document.getElementById('propertyValue');
-        const valueImovelElement = document.getElementById('valueImovel');
-        const termElement = document.getElementById('term');
-        const selectElement = document.getElementById('typeImovel');
-        const resultElement = document.getElementById('result_final');
-        if (!propertyValueElement || !valueImovelElement || !termElement || !selectElement || !resultElement) {
-            console.error('Elementos do DOM não encontrados.');
-            return;
-        }
-
-        const valueProperty = parseFloat(propertyValueElement.value);
-        const valueImovel = parseInt(valueImovelElement.value);
-        const valueTerm = parseInt(termElement.value);
-        const type = selectElement.value;
-
-        console.log("Valores do DOM:", { valueProperty, valueImovel, valueTerm, type });
-
-        try {
-            const result = calculateInstallment(valueProperty, valueImovel, valueTerm, type);
-            console.log("Resultado da prestação:", result);
-            resultElement.textContent = `R$${result.toFixed(2)} Por Mês`;
-            resultElement.style.color = 'black';
-        } catch (error) {
-            resultElement.textContent = error.message;
-            resultElement.style.color = 'red';
-        }
-    });
-});
