@@ -60,3 +60,5 @@ if (typeof document !== 'undefined') {
         });
     });
 }
+
+module.exports = { installment, callInstallment };
