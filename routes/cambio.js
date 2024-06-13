@@ -1,28 +1,19 @@
-var express = require('express');
-var path = require("path"); 
-var router = express.Router();
+fs.readFile('./public/html/Home.html', function (err, html) {
 
-/* GET users listing. */
-router.get('/', function(req, res) {
-  fs.readFile('./public/html/Home.html', function (err, html) {
+      if (err) {
 
-        if (err) {
+          throw err;
 
-            throw err;
+      }     
 
-        }     
+      else {
 
-        else {
+         res.writeHeader(200, {"Content-Type": "text/html"}); 
 
-           res.writeHeader(200, {"Content-Type": "text/html"}); 
+          res.write(html); 
 
-            res.write(html); 
+          res.end(); 
 
-            res.end(); 
+      }
 
-        }
-
-    }); 
-});
-
-module.exports = router;
+  }); 
