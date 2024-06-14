@@ -16,7 +16,6 @@ var cambio = require('./routes/cambio.js');
 var opcoes = require('./routes/opcoes.js');
 var finanRouter = require('./routes/finan')
 var jurosRouter = require('./routes/juros')
-var cambioRouter = require('./routes/cambio.js')
 
 
 var exampleRouter = require('./routes/example');
@@ -46,7 +45,6 @@ app.use('/cambio', cambio);
 app.use('/option', opcoes);
 app.use('/finan', finanRouter)
 app.use('/juros', jurosRouter)
-app.use('/cambio', cambioRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
