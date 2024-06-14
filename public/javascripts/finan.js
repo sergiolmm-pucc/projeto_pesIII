@@ -17,20 +17,18 @@ function calcularPrestacao(valorImovel, valorEntrada, tipoImovel, tempo) {
     return parseFloat(prestacao.toFixed(2));
 }
 
-function chamarPrestacao(calcularPrestacaofn)
-{
-    const resultado = calcularPrestacaofn(
-        parseFloat(document.getElementById('valueImovel').value),
-        parseFloat(document.getElementById('propertyValue').value),
-        parseInt(document.getElementById('term').value),
-        document.getElementById('typeImovel').value
-    );
-    exibirReultados(resultado);
+function chamarPrestacao(calcularPrestacaofn) {
+    const valorImovel = parseFloat(document.getElementById('valueImovel').value);
+    const valorEntrada = parseFloat(document.getElementById('propertyValue').value);
+    const tipoImovel = document.getElementById('typeImovel').value;
+    const tempo = parseInt(document.getElementById('term').value);
+
+    const resultado = calcularPrestacaofn(valorImovel, valorEntrada, tipoImovel, tempo);
+    exibirResultados(resultado);
 }
 
-function exibirReultados(resultado)
-{
-    document.getElementById('result_final').textContent = 'Prestação: ' + resultado.prestacaoFinal + 'R$'
+function exibirResultados(resultado) {
+    document.getElementById('result_final').textContent = 'Prestação: ' + resultado + ' R$';
 }
 
 if (typeof document !== 'undefined') {
