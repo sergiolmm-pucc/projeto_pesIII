@@ -36,7 +36,7 @@ function exibirReultados(resultado)
 if (typeof document !== 'undefined') {
     document.querySelector('.calculate').addEventListener('click', function(event){
         event.preventDefault();
-        chamarPrestacao();
+        chamarPrestacao(calcularPrestacao);
     })
 }
 
