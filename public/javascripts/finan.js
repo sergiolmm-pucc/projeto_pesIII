@@ -34,15 +34,10 @@ function exibirReultados(resultado)
 }
 
 if (typeof document !== 'undefined') {
-    document.addEventListener('DOMContentLoaded', function() {
-        const calcularBtn = document.querySelector('.calcular');
-        if (calcularBtn) {
-            calcularBtn.addEventListener('click', function(event) {
-                event.preventDefault();
-                chamarPrestacao(calcularPrestacao);
-            });
-        }
-    });
+    document.querySelector('.calculate').addEventListener('click', function(event){
+        event.preventDefault();
+        chamarPrestacao();
+    })
 }
 
 module.exports = { chamarPrestacao, calcularPrestacao }
