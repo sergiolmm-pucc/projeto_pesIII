@@ -14,6 +14,7 @@
     "F-opcoes-test": "node ./test/FuncionalOpcoes",
     "F-renda-test": "node ./test/FuncionalRenda",
     "F-juros-test": "node ./test/FuncionalJuros",
+    "F-finan-test": "node ./test/FuncionalFinan",
     "e2e-test": "start-server-and-test start http://localhost:3000/test"
   },
   "jest-junit": {
