@@ -5,13 +5,16 @@
   "scripts": {
     "start": "node ./bin/www",
     "lint": "eslint 'routes/**/*.js?(x)'",
+    "test3": "jest --verbose",
     "test": "jest --ci --reportes=default --reporters=jest-junit",
     "test2": "jest --verbose ./test2",
     "F-test": "node ./test/FuncionalExemplo",
-    "test3": "jest --verbose",
-    "F-test": "node ./test/FuncionalExemplo"
-    "F-darf-test": "node ./test/FuncionalDarf"
-
+    "F-darf-test": "node ./test/FuncionalDarf",
+    "F-fgts-test": "node ./test/FuncionalFgts",
+    "F-opcoes-test": "node ./test/FuncionalOpcoes",
+    "F-renda-test": "node ./test/FuncionalRenda",
+    "F-juros-test": "node ./test/FuncionalJuros",
+    "e2e-test": "start-server-and-test start http://localhost:3000/test"
   },
   "jest-junit": {
     "suiteName": "jest tests",
@@ -29,7 +32,6 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
-    "jest": "^29.7.0",
     "jest-junit": "^16.0.0",
     "morgan": "~1.9.1",
     "selenium-webdriver": "^4.21.0"
@@ -37,6 +39,9 @@
   "devDependencies": {
     "@eslint/js": "^9.1.1",
     "eslint": "^9.1.0",
-    "globals": "^15.0.0"
+    "globals": "^15.0.0",
+    "jest": "^29.7.0",
+    "start-server-and-test": "^2.0.4",
+    "supertest": "^7.0.0"
   }
 }

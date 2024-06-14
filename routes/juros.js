@@ -1,10 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var path = require('path'); 
 
-/* GET users listing. */
 router.get('/', function(req, res) {
-  res.send('<h1>Calculo de juros...</h1>');
+  res.sendFile(path.join(__dirname, '../views/juros_index.html'));
 });
 
 module.exports = router;
-/* teste push */

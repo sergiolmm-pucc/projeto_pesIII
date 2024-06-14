@@ -10,7 +10,14 @@ var rendaRouter = require('./routes/renda');
 var baseRouter = require('./routes/base');
 var fgtsRouter =  require('./routes/fgts');
 var darfRouter = require('./routes/darf');
-var taxaRouter = require('./routes/taxaIntercambiaria')
+
+var custosRouter = require('./routes/custo');
+var cambio = require('./routes/cambio.js');
+var opcoes = require('./routes/opcoes.js');
+var finanRouter = require('./routes/finan')
+var jurosRouter = require('./routes/juros')
+var cambioRouter = require('./routes/cambio.js')
+
 
 var exampleRouter = require('./routes/example');
 
@@ -33,7 +40,13 @@ app.use('/base', baseRouter);
 app.use('/darf', darfRouter);
 app.use('/fgts',fgtsRouter);
 app.use('/example', exampleRouter);
-app.use('/taxaIntercambiaria', taxaRouter)
+
+app.use('/custos', custosRouter);
+app.use('/cambio', cambio);
+app.use('/option', opcoes);
+app.use('/finan', finanRouter)
+app.use('/juros', jurosRouter)
+app.use('/cambio', cambioRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

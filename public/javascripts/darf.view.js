@@ -9,12 +9,15 @@ const avgPrice = document.getElementById('avgPrice')
 const profitOrLoss = document.getElementById('profitOrLoss')
 const qtd = document.getElementById('qtd')
 const darfEl = document.getElementById('darf')
+const form = document.getElementById('form')
 
 
-btnAdd.addEventListener('click', async () => {
+btnAdd.addEventListener('click', async (e) => {
     if (inpBuy.value != '' && inpSell.value != '' && inpQtd.value != '') {
+      e.preventDefault()
+
         let darf = await axios.post(
-          'http://localhost:3000/darf/calc',
+          'https://stealth-faithful-geese.glitch.me/darf/calc',
           {
             quantity: parseFloat(inpQtd.value),
             buyPrice: parseFloat(inpBuy.value),

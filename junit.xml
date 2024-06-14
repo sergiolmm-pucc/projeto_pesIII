@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="25" failures="0" errors="0" time="4.896">
+  <testsuite name="test\Exemplo2.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-12T01:08:06" time="1.727" tests="1">
+    <testcase classname="Teste exemplo 3-Funcao calcularArea" name="Teste exemplo 3-Funcao calcularArea" time="0.024">
+    </testcase>
+  </testsuite>
+  <testsuite name="test\Calc2.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-12T01:08:06" time="1.755" tests="2">
+    <testcase classname="Teste basico 2-Valores " name="Teste basico 2-Valores " time="0.056">
+    </testcase>
+    <testcase classname="Teste basico 2-CalcularCubo com string " name="Teste basico 2-CalcularCubo com string " time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="test\Exemplo.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-12T01:08:06" time="1.735" tests="1">
+    <testcase classname="Teste exemplo 1-Funcao calcularArea" name="Teste exemplo 1-Funcao calcularArea" time="0.021">
+    </testcase>
+  </testsuite>
+  <testsuite name="test\Renda.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-12T01:08:06" time="1.749" tests="4">
+    <testcase classname="Teste Cálculo de Investimento-should calculate the correct gross value" name="Teste Cálculo de Investimento-should calculate the correct gross value" time="0.048">
+    </testcase>
+    <testcase classname="Teste Cálculo de Investimento-should calculate the correct net value after tax" name="Teste Cálculo de Investimento-should calculate the correct net value after tax" time="0.003">
+    </testcase>
+    <testcase classname="Teste Cálculo de Imposto-should calculate the correct tax for short term investment" name="Teste Cálculo de Imposto-should calculate the correct tax for short term investment" time="0.001">
+    </testcase>
+    <testcase classname="Teste Cálculo de Imposto-should calculate the correct tax for long term investment" name="Teste Cálculo de Imposto-should calculate the correct tax for long term investment" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="test\darf.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-12T01:08:06" time="1.735" tests="4">
+    <testcase classname="Teste Darf-should throw an error when parameter types are wrong" name="Teste Darf-should throw an error when parameter types are wrong" time="0.041">
+    </testcase>
+    <testcase classname="Teste Darf-is the darf fee right?" name="Teste Darf-is the darf fee right?" time="0.001">
+    </testcase>
+    <testcase classname="Teste Darf-is the darf fee wrong?" name="Teste Darf-is the darf fee wrong?" time="0.001">
+    </testcase>
+    <testcase classname="Teste Darf-is the avg price right?" name="Teste Darf-is the avg price right?" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="test\CalcFgts.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-12T01:08:06" time="1.787" tests="4">
+    <testcase classname="Teste FGTS-deve lançar um erro quando os tipos dos parâmetros estão errados" name="Teste FGTS-deve lançar um erro quando os tipos dos parâmetros estão errados" time="0.045">
+    </testcase>
+    <testcase classname="Teste FGTS-deve lançar um erro quando os parâmetros são negativos" name="Teste FGTS-deve lançar um erro quando os parâmetros são negativos" time="0.004">
+    </testcase>
+    <testcase classname="Teste FGTS-o cálculo do FGTS está correto?" name="Teste FGTS-o cálculo do FGTS está correto?" time="0.001">
+    </testcase>
+    <testcase classname="Teste FGTS-o cálculo do FGTS está incorreto?" name="Teste FGTS-o cálculo do FGTS está incorreto?" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="test\CalcularTest.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-12T01:08:06" time="1.727" tests="2">
+    <testcase classname="Teste basico 1-Valores corretos" name="Teste basico 1-Valores corretos" time="0.039">
+    </testcase>
+    <testcase classname="Teste basico 1-CalcularCubo de 3 " name="Teste basico 1-CalcularCubo de 3 " time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="test\juros.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-12T01:08:06" time="2.934" tests="3">
+    <testcase classname="GET /juros-should return the juros_index.html file" name="GET /juros-should return the juros_index.html file" time="0.059">
+    </testcase>
+    <testcase classname="calculateLoan function-calculates loan with monthly interest correctly" name="calculateLoan function-calculates loan with monthly interest correctly" time="0.002">
+    </testcase>
+    <testcase classname="calculateLoan function-calculates loan with yearly interest correctly" name="calculateLoan function-calculates loan with yearly interest correctly" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="test\opcoes.test.js" errors="0" failures="0" skipped="0" timestamp="2024-06-12T01:08:06" time="4.22" tests="4">
+    <testcase classname="Option Pricing Calculations-calculateEuropeanOptionPrice for call option" name="Option Pricing Calculations-calculateEuropeanOptionPrice for call option" time="0.016">
+    </testcase>
+    <testcase classname="Option Pricing Calculations-calculateEuropeanOptionPrice for put option" name="Option Pricing Calculations-calculateEuropeanOptionPrice for put option" time="0.001">
+    </testcase>
+    <testcase classname="Option Pricing Calculations-calculateAmericanOptionPrice for call option" name="Option Pricing Calculations-calculateAmericanOptionPrice for call option" time="1.048">
+    </testcase>
+    <testcase classname="Option Pricing Calculations-calculateAmericanOptionPrice for put option" name="Option Pricing Calculations-calculateAmericanOptionPrice for put option" time="0.936">
+    </testcase>
+  </testsuite>
+</testsuites>

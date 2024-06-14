@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Option Price Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #E5E5E5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #14213D;
+            color: #FFFFFF;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .calculator-container {
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            box-sizing: border-box;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="number"],
+        select {
+            padding: 10px;
+            border: 1px solid #14213D;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="range"] {
+            width: 100%;
+        }
+
+        button {
+            background-color: #FCA311;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e08e0b;
+        }
+
+        @media (max-width: 768px) {
+            .calculator-container {
+                padding: 15px;
+            }
+
+            input[type="number"],
+            select,
+            button {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            label {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .calculator-container {
+                padding: 10px;
+            }
+
+            input[type="number"],
+            select,
+            button {
+                font-size: 12px;
+                padding: 6px;
+            }
+
+            label {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Option Price Calculator</h1>
+    </header>
+    <main>
+        <div class="calculator-container">
+            <form id="optionCalculator" method="POST" action="/option/calculate-option-price">
+                <label for="stockPrice">Stock Price:</label>
+                <input type="number" id="stockPrice" name="stockPrice" min="0" step="0.01" required>
+                
+                <label for="strikePrice">Strike Price:</label>
+                <input type="number" id="strikePrice" name="strikePrice" min="0" step="0.01" required>
+
+                <label for="timeToMaturity">Time to Maturity (years): <span id="timeToMaturityValue">1</span></label>
+                <input type="range" id="timeToMaturity" name="timeToMaturity" min="0" max="50" step="1" value="1" oninput="document.getElementById('timeToMaturityValue').innerText = this.value">
+
+                <label for="volatility">Volatility (%): <span id="volatilityValue">20</span></label>
+                <input type="range" id="volatility" name="volatility" min="0" max="100" step="1" value="20" oninput="document.getElementById('volatilityValue').innerText = this.value">
+
+                <label for="riskFreeRate">Risk-Free Rate (%): <span id="riskFreeRateValue">5</span></label>
+                <input type="range" id="riskFreeRate" name="riskFreeRate" min="0" max="20" step="1" value="5" oninput="document.getElementById('riskFreeRateValue').innerText = this.value">
+
+                <label for="optionType">Option Type:</label>
+                <select id="optionType" name="optionType">
+                    <option value="call">Call</option>
+                    <option value="put">Put</option>
+                </select>
+
+                <label for="exerciseType">Exercise Type:</label>
+                <select id="exerciseType" name="exerciseType">
+                    <option value="european">European</option>
+                    <option value="american">American</option>
+                </select>
+
+                <button type="submit">Calculate</button>
+            </form>
+        </div>
+    </main>
+
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Option Price Calculator</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1>Option Price Calculator</h1>
+    <form method="POST" action="/option/calculate-option-price">
+        <label for="stockPrice">Stock Price:</label>
+        <input type="text" id="stockPrice" name="stockPrice">
+        <br>
+        <label for="strikePrice">Strike Price:</label>
+        <input type="text" id="strikePrice" name="strikePrice">
+        <br>
+        <label for="timeToMaturity">Time to Maturity (years):</label>
+        <input type="text" id="timeToMaturity" name="timeToMaturity">
+        <br>
+        <label for="volatility">Volatility (%):</label>
+        <input type="text" id="volatility" name="volatility">
+        <br>
+        <label for="riskFreeRate">Risk-Free Rate (%):</label>
+        <input type="text" id="riskFreeRate" name="riskFreeRate">
+        <br>
+        <label for="optionType">Option Type:</label>
+        <select id="optionType" name="optionType">
+            <option value="call">Call</option>
+            <option value="put">Put</option>
+        </select>
+        <br>
+        <label for="exerciseType">Exercise Type:</label>
+        <select id="exerciseType" name="exerciseType">
+            <option value="european">European</option>
+            <option value="american">American</option>
+        </select>
+        <br>
+        <button type="submit">Calculate</button>
+    </form>
+</body>
+</html> -->

@@ -1,9 +1,9 @@
 var express = require('express');
+var path = require('path'); 
 var router = express.Router();
 
-/* GET users listing. */
 router.get('/', function(req, res) {
-  res.send('<h1>Turbo...</h1>');
+  res.sendFile(path.join(__dirname, '../views/preco_venda.html'));
 });
 
 module.exports = router;
