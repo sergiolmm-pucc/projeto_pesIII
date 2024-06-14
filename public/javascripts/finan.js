@@ -8,7 +8,7 @@ function calcularPrestacao(valorImovel, valorEntrada, tipoImovel, tempo) {
     } else if (tipoImovel === "Terreno") {
         juros = 8 / 12 / 100;
     } else {
-        throw new Error("Tipo de imóvel inválido");
+        juros = 6 / 12 / 100;
     }
 
     const novoValor = valorImovel - valorEntrada;
