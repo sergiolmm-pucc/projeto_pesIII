@@ -1,64 +1,48 @@
-function installment(value, propertyValue, term, type) {
-        
-    if (value < 0 || propertyValue < 0 || term < 0) {
-        throw new Error("Os valores não podem ser negativos");
-    }
-    
-    let jurosMensal;
-    
-    if (type === 'Casa' || type === 'Apartamento') {
-        jurosMensal = 6 / 12 / 100;
-    } else if (type === "Terreno") {
-        jurosMensal = 8 / 12 / 100;
-    } else {
-        throw new Error('Tipo de imóvel inválido');
-    }
+function calcularPrestacao(valorImovel, valorEntrada, tipoImovel, tempo)
+{   
+    let juros;
+    if(valorImovel < 0 || valorEntrada < 0 || tempo < 0)
+        {
+            throw new Error("Os valores tem que ser positivos")
+        }
+    if(tipoImovel == "Casa" || tipoImovel == "Apartamento")
+        {
+            juros = 6/12/100;
+        }
+    else if(tipoImovel == "Terreno")
+        {
+            juros = 8/12/100;
+        }
+    const novoValor =  valorImovel - valorEntrada
 
-    const newValue = value - propertyValue;
-    const r = jurosMensal;
-    const n = term;
-    const P = newValue;
-
-    const prestacao = (P * r * Math.pow((1 + r), n)) / (Math.pow((1 + r), n) - 1);
-    return parseFloat(prestacao.toFixed(2));
+    const prestacao = (novoValor * juros * Math.pow((1+juros), tempo))/(Math.pow((1+juros), tempo)-1);
+    return
+    {
+        prestacaoFinal: prestacao.toFixed(2)
+    }
 }
 
-function callInstallment(valueProperty, valueImovel, valueTerm, type) {
+function chamarPrestacao(calcularPrestacaofn)
+{
+    const resultado = calcularPrestacaofn(
+        parseFloat(document.getElementById('valueImovel').value),
+        parseFloat(document.getElementById('propertyValue').value),
+        parseInt(document.getElementById('term').value),
+        document.getElementById('typeImovel').value
+    );
+    exibirReultados(resultado);
+}
 
-    return installment(valueImovel, valueProperty, valueTerm, type);
+function exibirReultados(resultado)
+{
+    document.getElementById('result_final').textContent = 'Prestação: ' + resultado.prestacaoFinal + 'R$'
 }
 
 if (typeof document !== 'undefined') {
-    document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById('form').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const propertyValueElement = document.getElementById('propertyValue');
-            const valueImovelElement = document.getElementById('valueImovel');
-            const termElement = document.getElementById('term');
-            const selectElement = document.getElementById('typeImovel');
-            const resultElement = document.getElementById('result_final');
-
-            const valueProperty = parseFloat(propertyValueElement.value);
-            const valueImovel = parseInt(valueImovelElement.value);
-            const valueTerm = parseInt(termElement.value);
-            const type = selectElement.value;
-
-            console.log("Valores do DOM:", { valueProperty, valueImovel, valueTerm, type });
-
-            try {
-                const result = callInstallment(valueProperty, valueImovel, valueTerm, type);
-                console.log("Resultado da prestação:", result);
-                resultElement.textContent = `R$${result.toFixed(2)} Por Mês`;
-                resultElement.style.color = 'black';
-            } catch (error) {
-                resultElement.textContent = error.message;
-                resultElement.style.color = 'red';
-            }
-        });
+    document.querySelector('.calcular').addEventListener('click', function(event) {
+        event.preventDefault();
+        chamarPrestacao(calcularPrestacao)
     });
 }
 
-
-module.exports = { installment };
-
+module.exports = { chamarPrestacao, calcularPrestacao }
