@@ -1,19 +1,12 @@
-fs.readFile('./public/html/Home.html', function (err, html) {
+const express = require('express');
+const router = express.Router();
+const path = require('path');
 
-      if (err) {
 
-          throw err;
 
-      }     
+router.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/html/Home.html'));
+});
 
-      else {
 
-         res.writeHeader(200, {"Content-Type": "text/html"}); 
-
-          res.write(html); 
-
-          res.end(); 
-
-      }
-
-  }); 
+  module.exports = router;
