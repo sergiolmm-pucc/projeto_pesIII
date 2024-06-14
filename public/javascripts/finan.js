@@ -1,25 +1,20 @@
-function calcularPrestacao(valorImovel, valorEntrada, tipoImovel, tempo)
-{   
+function calcularPrestacao(valorImovel, valorEntrada, tipoImovel, tempo) {
     let juros;
-    if(valorImovel < 0 || valorEntrada < 0 || tempo < 0)
-        {
-            throw new Error("Os valores tem que ser positivos")
-        }
-    if(tipoImovel == "Casa" || tipoImovel == "Apartamento")
-        {
-            juros = 6/12/100;
-        }
-    else if(tipoImovel == "Terreno")
-        {
-            juros = 8/12/100;
-        }
-    const novoValor =  valorImovel - valorEntrada
-
-    const prestacao = (novoValor * juros * Math.pow((1+juros), tempo))/(Math.pow((1+juros), tempo)-1);
-    return
-    {
-        prestacaoFinal: prestacao.toFixed(2)
+    if (valorImovel < 0 || valorEntrada < 0 || tempo < 0) {
+        throw new Error("Os valores têm que ser positivos");
     }
+    if (tipoImovel === "Casa" || tipoImovel === "Apartamento") {
+        juros = 6 / 12 / 100;
+    } else if (tipoImovel === "Terreno") {
+        juros = 8 / 12 / 100;
+    } else {
+        throw new Error("Tipo de imóvel inválido");
+    }
+
+    const novoValor = valorImovel - valorEntrada;
+    const prestacao = (novoValor * juros * Math.pow((1 + juros), tempo)) / (Math.pow((1 + juros), tempo) - 1);
+    
+    return parseFloat(prestacao.toFixed(2));
 }
 
 function chamarPrestacao(calcularPrestacaofn)
