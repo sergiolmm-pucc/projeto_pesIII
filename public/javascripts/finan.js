@@ -34,9 +34,14 @@ function exibirReultados(resultado)
 }
 
 if (typeof document !== 'undefined') {
-    document.querySelector('.calcular').addEventListener('click', function(event) {
-        event.preventDefault();
-        chamarPrestacao(calcularPrestacao)
+    document.addEventListener('DOMContentLoaded', function() {
+        const calcularBtn = document.querySelector('.calcular');
+        if (calcularBtn) {
+            calcularBtn.addEventListener('click', function(event) {
+                event.preventDefault();
+                chamarPrestacao(calcularPrestacao);
+            });
+        }
     });
 }
 
