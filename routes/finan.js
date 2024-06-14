@@ -5,7 +5,7 @@ const path = require('path')
 
 /* GET users listing. */
 router.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, "/../views/finan.html"))
+  app.use(express.static(path.join(__dirname, "/../views/finan.html")))
 });
 
 
