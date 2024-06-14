@@ -22,3 +22,8 @@ function calculateLoan(loanAmount, loanTerm, interestRate, interestType) {
         totalInterestPaid: totalInterestPaid.toFixed(2)
     };
 }
+
+// Conditionally export for Node.js testing
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = calculateLoan;
+}
