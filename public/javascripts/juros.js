@@ -22,5 +22,3 @@ function calculateLoan(loanAmount, loanTerm, interestRate, interestType) {
         totalInterestPaid: totalInterestPaid.toFixed(2)
     };
 }
-
-module.exports = calculateLoan;

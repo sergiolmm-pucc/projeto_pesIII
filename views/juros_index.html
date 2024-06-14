@@ -83,7 +83,7 @@
                 <option value="yearly">Ao Ano</option>
             </select><br><br>
 
-            <button type="button" onclick="calculateLoan()">Calcular</button>
+            <button type="button" onclick="calculateAndDisplayLoan()">Calcular</button>
         </form>
 
         <div id="results" style="display: none;">
@@ -94,7 +94,7 @@
         </div>
         <script src="../public/javascripts/juros.js"></script>
         <script>
-            function calculateLoan() {
+            function calculateAndDisplayLoan() {
                 const loanAmount = parseFloat(document.getElementById('loanAmount').value);
                 const loanTerm = parseInt(document.getElementById('loanTerm').value);
                 const interestRate = parseFloat(document.getElementById('interestRate').value);
