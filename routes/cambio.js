@@ -1,23 +1,12 @@
-var fs = require('fs');
+const express = require('express');
+const router = express.Router();
+const path = require('path');
 
 
-var express = require('express');
-var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res) {
-    fs.readFile('./public/html/Home.html', function (err, html) {
-        if (err) {
-            throw err; 
-        }      
-        else { 
-           res.writeHeader(200, {"Content-Type": "text/html"});  
-            res.write(html);  
-            res.end();  
-        }
-    });    
-      
-
+router.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/html/Home.html'));
 });
 
-module.exports = router;
+
+  module.exports = router;
