@@ -4,8 +4,10 @@ const path = require('path')
 
 
 /* GET users listing. */
-router.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, "/../views/finan.html"))
+router.use(express.static(path.join(__dirname, 'public')));
+
+router.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 
